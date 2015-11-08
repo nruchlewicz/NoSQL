@@ -1,6 +1,9 @@
 #Notatki
 
-##Usuwanie bazy
+###Pokaż bazy 
+``>show dbs ``
+
+###Usuwanie bazy
 
 **> use mydb**   *//mydb nazwa bazy danych*
 
@@ -8,4 +11,4 @@
 
 **>db.dropDatabase()**
 
-**>**
+**>**``
