@@ -2,8 +2,7 @@
 
 ##Usuwanie bazy
 
-`` 
->use mydb  *mydb nazwa bazy danych*
-switched to db mydb
->db.dropDatabase()
-> ``
+``>use mydb  *mydb nazwa bazy danych*``
+``switched to db mydb``
+``>db.dropDatabase()``
+``>``
