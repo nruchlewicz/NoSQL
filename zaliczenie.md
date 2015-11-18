@@ -50,4 +50,33 @@ db.reddit.count()
 ```
 Czyli ilość zaimportowanycj jsonów się zgadza.
 
-
+####Przykładowe  zapytania
+1. Znajdz pierwsze.
+```sh
+db.reddit.findOne()
+{
+  "_id": ObjectId("564b635081d89fc9eec8a4ac"),
+  "score_hidden": false,
+  "name": "t1_cnas8zv",
+  "link_id": "t3_2qyr1a",
+  "body": "Most of us have some family members like this. *Most* of my family is like this. ",
+  "downs": 0,
+  "created_utc": "1420070400",
+  "score": 14,
+  "author": "YoungModern",
+  "distinguished": null,
+  "id": "cnas8zv",
+  "archived": false,
+  "parent_id": "t3_2qyr1a",
+  "subreddit": "exmormon",
+  "author_flair_css_class": null,
+  "author_flair_text": null,
+  "gilded": 0,
+  "retrieved_on": 1425124282,
+  "ups": 14,
+  "controversiality": 0,
+  "subreddit_id": "t5_2r0gj",
+  "edited": false
+}
+```
+2. Znajdz 
