@@ -51,6 +51,7 @@ db.reddit.count()
 Czyli ilość zaimportowanycj jsonów się zgadza.
 
 ####Przykładowe  zapytania
+
 1. Znajdz pierwsze.
 ```sh
 db.reddit.findOne()
@@ -83,6 +84,28 @@ db.reddit.findOne()
 ```sh
 db.reddit.distinct("score").length
 4635
+```
+3. Wyświetlenie wszystkich autorów
+```sh
+db.reddit.find({},{author:1})
+(...)
+{
+  "_id": ObjectId("564b65b281d89fc9ee24caa3"),
+  "author": "Solkre"
+}
+{
+  "_id": ObjectId("564b65b281d89fc9ee24caa4"),
+  "author": "aStarving0rphan"
+}
+{
+  "_id": ObjectId("564b65b281d89fc9ee24caa5"),
+  "author": "ZcSx"
+}
+{
+  "_id": ObjectId("564b65b281d89fc9ee24caa6"),
+  "author": "Steampunk_Moustache"
+}
+(...)
 ```
 
 
