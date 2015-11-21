@@ -79,4 +79,10 @@ db.reddit.findOne()
   "edited": false
 }
 ```
-2. Znajdz 
+2. 
+```sh
+db.reddit.distinct("score").length
+4635
+```
+
+
