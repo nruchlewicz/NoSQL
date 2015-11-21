@@ -121,4 +121,7 @@ db.reddit.find({},{author:1})
 (...)
 ```
 
+```sh
+ test> db.reddit.find({score: { $gte: 1300}})
+ ```
 
