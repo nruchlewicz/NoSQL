@@ -86,6 +86,19 @@ db.reddit.distinct("score").length
 4635
 ```
 3. Wyświetlenie wszystkich autorów
+
+Wyświetlenie 10 autorów ```(db.reddit.find({},{author:1})``` zajmuje *1ms*.
+
+Wyświetlenie 100 autorów ```(db.reddit.find({},{author:1})``` zajmuje *8ms*.
+
+Wyświetlenie 1000 autorów ```(db.reddit.find({},{author:1})``` zajmuje *87ms*.
+
+Wyświetlenie 10000 autorów ```(db.reddit.find({},{author:1})``` zajmuje *814ms*.
+
+Wyświetlenie 100000 autorów ```(db.reddit.find({},{author:1})``` zajmuje *8226ms*.
+
+Wyświetlenie wszyskich trwa ( *bardzo dłuuuuuugo* )
+
 ```sh
 db.reddit.find({},{author:1})
 (...)
