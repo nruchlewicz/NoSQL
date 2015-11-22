@@ -121,6 +121,7 @@ db.reddit.find({},{author:1})
 (...)
 ```
 
+Wywietlenie postów z wynikiem wikszym od 1300.
 ```sh
  test> db.reddit.find({score: { $gte: 1300}})
  ```
