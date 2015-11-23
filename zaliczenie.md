@@ -150,4 +150,33 @@ test> db.reddit.find({score: { $gte: 3000}})
 }
 Fetched 2510 record(s) in 671475ms
  ```
+ 
+ Przykładowy dokument z kolekcji reddit
+ ```sh
+ natalia(mongod-2.6.3) test> db.reddit.find({author: "vhisic"}).limit(1)
+{
+  "_id": ObjectId("564b635081d89fc9eec8a4ae"),
+  "score_hidden": false,
+  "link_id": "t3_2qxefp",
+  "name": "t1_cnas8zx",
+  "created_utc": "1420070400",
+  "downs": 0,
+  "body": "Mine uses a strait razor, and as much as i love the clippers i love the razor so much more. Then he follows it up with a warm towel. \nI think i might go get a hair cut this week.",
+  "distinguished": null,
+  "id": "cnas8zx",
+  "archived": false,
+  "author": "vhisic",
+  "score": 1,
+  "subreddit": "AdviceAnimals",
+  "parent_id": "t3_2qxefp",
+  "retrieved_on": 1425124282,
+  "ups": 1,
+  "author_flair_css_class": null,
+  "author_flair_text": null,
+  "gilded": 0,
+  "controversiality": 0,
+  "subreddit_id": "t5_2s7tt",
+  "edited": false
+}
+```
 
