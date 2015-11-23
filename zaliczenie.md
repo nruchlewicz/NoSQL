@@ -179,4 +179,11 @@ Fetched 2510 record(s) in 671475ms
   "edited": false
 }
 ```
-
+Grupowanie wzglęgdem atrybutu *author* + licznik wystąpień
+Niestety nie da rady wyświetlić wyników.. 
+```sh
+2015-11-23T14:00:30.541+0100 group command failed: {
+  "errmsg": "exception: group() can't handle more than 20000 unique keys",
+  "code": 17203,
+  "ok": 0
+```
