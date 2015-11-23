@@ -121,8 +121,33 @@ db.reddit.find({},{author:1})
 (...)
 ```
 
-Wywietlenie postów z wynikiem wikszym od 1300.
+Wywietlenie postów z wynikiem wikszym od 3000. //Wyświetlono ostatni (największy) score.
 ```sh
- test> db.reddit.find({score: { $gte: 1300}})
+test> db.reddit.find({score: { $gte: 3000}})
+{
+  "_id": ObjectId("564b7a1f81d89fc9eefe40e6"),
+  "author": "thebestisyetocome",
+  "retrieved_on": 1424281837,
+  "edited": 1422762310,
+  "archived": false,
+  "subreddit": "funny",
+  "score": 3518,
+  "subreddit_id": "t5_2qh33",
+  "link_id": "t3_2ucr4e",
+  "controversiality": 0,
+  "ups": 3518,
+  "distinguished": null,
+  "downs": 0,
+  "created_utc": "1422748520",
+  "author_flair_css_class": null,
+  "name": "t1_co77bxd",
+  "body": "Has to be husband's agreeing. \n\nIf more people find it helpful, it makes it more true!\n\nEdit: Anyone know why in the hell this is getting SO many upvotes? ",
+  "author_flair_text": null,
+  "gilded": 0,
+  "id": "co77bxd",
+  "score_hidden": false,
+  "parent_id": "t1_co770jy"
+}
+Fetched 2510 record(s) in 671475ms
  ```
 
