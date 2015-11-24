@@ -244,3 +244,13 @@ db.reddit.find({score : {$in: [1024, 2048]}},{_id:0, subreddit:1, score: 1}).lim
 }
 Fetched 3 record(s) in 13642ms
 ```
+####Grupowania:
+
+db.reddit.group({ 
+   cond: {"score": {$gte: 45, $lt:50}} , 
+   key: {score: true} , 
+   initial: {author_count: 0 , total_author_len: 0} , 
+   reduce: function(doc, out) {out.author_count++; out.total_author_len += doc.author.length;} , 
+   finalize: function(out) { out.avg_author_len = out.total_author_len/ out.author_count; } 
+   } );
+
