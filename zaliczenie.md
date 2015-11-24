@@ -273,24 +273,30 @@ Fetched 5 record(s) in 61803ms
 ####Grupowania:
 1. Grupowanie po wyniku (score)
 ```sh
-db.reddit.group({ 
-   cond: {"score": {$gte: 45, $lt:50}} , 
-   key: {score: true} , 
-   initial: {author_count: 0 , total_author_len: 0} , 
-   reduce: function(doc, out) {out.author_count++; out.total_author_len += doc.author.length;} , 
-   finalize: function(out) { out.avg_author_len = out.total_author_len/ out.author_count; } 
-   } );
+test> db.reddit.group({
+   cond: {"score": {$gte: 45, $lt:46}} ,     
+    key: {score: true} ,     
+    initial: {body_count: 0 , total_body_len: 0} ,     
+    reduce: function(doc, out) {out.body_count++; out.total_body_len += doc.body.length;} ,     
+    finalize: function(out) { out.srednia_dl_wpisu  = out.total_body_len/ out.body_count; }     } );
 ```
 
 **Po 45 minutach oczekiwania zwątpiłam..**
 2. Grupowanie po score większym, równym 45, a mniejszym niż 46
 ```sh
+test> db.reddit.group({    
+    cond: {"score": {$gte: 45, $lt:46}} ,     
+    key: {score: true} ,     
+    initial: {body_count: 0 , total_body_len: 0} ,     
+    reduce: function(doc, out) {out.body_count++; out.total_body_len += doc.body.length;} ,    
+    finalize: function(out) { out.srednia_dl_wpisu  = out.total_body_len/ out.body_count; }     } );
 [
   {
     "score": 45,
-    "author_count": 17968,
-    "total_author_len": 195135,
-    "avg_author_len": 10.860140249332146
+    "body_count": 17968,
+    "total_body_len": 3277467,
+    "srednia_dl_wpisu": 182.4057769367765
   }
 ]
 ```
+
