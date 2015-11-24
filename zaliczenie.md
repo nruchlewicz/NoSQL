@@ -271,10 +271,10 @@ Fetched 5 record(s) in 61803ms
 ``` 
 
 ####Grupowania:
-1. Grupowanie po wyniku (score)
+1. Grupowanie po wyniku (score) większym, równym 45, mniejszym niż 55
 ```sh
 test> db.reddit.group({
-   cond: {"score": {$gte: 45, $lt:46}} ,     
+   cond: {"score": {$gte: 45, $lt:55}} ,     
     key: {score: true} ,     
     initial: {body_count: 0 , total_body_len: 0} ,     
     reduce: function(doc, out) {out.body_count++; out.total_body_len += doc.body.length;} ,     
