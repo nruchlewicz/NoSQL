@@ -121,7 +121,7 @@ db.reddit.find({},{author:1})
 (...)
 ```
 
-Wywietlenie postów z wynikiem wikszym od 3000. //Wyświetlono ostatni (największy) score.
+4. Wywietlenie postów z wynikiem wikszym od 3000. //Wyświetlono ostatni (największy) score.
 ```sh
 test> db.reddit.find({score: { $gte: 3000}})
 {
@@ -151,7 +151,7 @@ test> db.reddit.find({score: { $gte: 3000}})
 Fetched 2510 record(s) in 671475ms
  ```
  
- Przykładowy dokument z kolekcji reddit
+5. Przykładowy dokument z kolekcji reddit
  ```sh
 test> db.reddit.find({author: "vhisic"}).limit(1)
 {
@@ -179,7 +179,7 @@ test> db.reddit.find({author: "vhisic"}).limit(1)
   "edited": false
 }
 ```
-Grupowanie wzglęgdem atrybutu *author* + licznik wystąpień
+6. Grupowanie wzglęgdem atrybutu *author* + licznik wystąpień
 Niestety nie da rady wyświetlić wyników.. 
 ```sh
 2015-11-23T14:00:30.541+0100 group command failed: {
@@ -188,7 +188,7 @@ Niestety nie da rady wyświetlić wyników..
   "ok": 0
 ```
 
-Wywświetlenie 5-ciu autorów na literę A, (pominięcie pierwszych 5-ciu).
+7. Wywświetlenie 5-ciu autorów na literę A, (pominięcie pierwszych 5-ciu).
 
 ```sh
 test> db.reddit.find({author: /^a/}, {_id:0, author:1}).skip(5).limit(5)
@@ -211,7 +211,7 @@ Fetched 5 record(s) in 1ms
 
 ```
 
-Wyświetlenie 3 wpisów autora "zombie1939" (pominięcie pierwszych 10)
+8. Wyświetlenie 3 wpisów autora "zombie1939" (pominięcie pierwszych 10)
 ```sh
 test> db.reddit.find({author: "zombie1939"}, {_id:0, body:1}).skip(10).limit(3)
 {
@@ -227,7 +227,7 @@ test> db.reddit.find({author: "zombie1939"}, {_id:0, body:1}).skip(10).limit(3)
 Fetched 3 record(s) in 245591ms
 ```
 
-Wyświetlenie 3 wpisów z wynikiem 1024 lub 2048.
+9. Wyświetlenie 3 wpisów z wynikiem 1024 lub 2048.
 ```sh
 db.reddit.find({score : {$in: [1024, 2048]}},{_id:0, subreddit:1, score: 1}).limit(3)
 {
@@ -244,6 +244,32 @@ db.reddit.find({score : {$in: [1024, 2048]}},{_id:0, subreddit:1, score: 1}).lim
 }
 Fetched 3 record(s) in 13642ms
 ```
+10. Wyświetlenie 5-ciu pierwszych wpisów autorów xanaxxanaxxanax i brazen
+```sh
+test> db.reddit.find({author: {$in: ["xanaxxanaxxanax", "brazen"]}}, {_id:0, author:1, body:1}).limit(5)
+{
+  "body": "I thought that is what the picture was about at first - like is it a Canadian thing to eat chips with utensils, and requiring two utensils at that.",
+  "author": "brazen"
+}
+{
+  "body": "Ice bong sounds nice.\n\nNo babysitter so will be at home puffing on the doja after the little one shleeps",
+  "author": "xanaxxanaxxanax"
+}
+{
+  "author": "brazen",
+  "body": "I have this happen, too only on one computer and only on youtube.  It is not a hardware problem, as other's are claiming.  This computer dual boots Windows and it never happens in Windows.  I've asked about it and googling around I found another person ask about it with no useful response.  And of several Ubuntu desktops I've used, this is the only one it does it on.\n\nI suspect it's a driver issue.  My computer uses the Nvidia proprietary drivers, and I'm not sure if I've ever tried it with the opensource drivers."
+}
+{
+  "author": "brazen",
+  "body": "&gt; This is intense.\n\nNo those are just canopies."
+}
+{
+  "author": "brazen",
+  "body": "I worked a 50-60 hr/week job in IT while I studied for the MCAT that still left me with 4 hours to study after work and all day on the weekends.  But as others have said, it's kinda moot at this point considering all your retakes without much improvement.  Did you take practice tests?  You should not even consider retaking the MCAT until you are scoring much higher on the practice tests."
+}
+Fetched 5 record(s) in 61803ms
+``` 
+
 ####Grupowania:
 1. Grupowanie po wyniku (score)
 ```sh
