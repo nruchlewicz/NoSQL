@@ -207,19 +207,22 @@ test> db.reddit.find({author: /^a/}, {_id:0, author:1}).skip(5).limit(5)
 {
   "author": "adalab"
 }
+Fetched 5 record(s) in 1ms
+
 ```
 
-Wyświetlenie 3 wpisów autora "Vhisic" (pominięcie pierwszych 10)
+Wyświetlenie 3 wpisów autora "zombie1939" (pominięcie pierwszych 10)
 ```sh
-test> db.reddit.find({author: "vhisic"}, {_id:0, body:1}).skip(10).limit(3)
+test> db.reddit.find({author: "zombie1939"}, {_id:0, body:1}).skip(10).limit(3)
 {
-  "body": "http://us.battle.net/wow/en/character/shadowmoon/Ipoonjoo/advanced"
+  "body": "BRRRRRRRT\nflares\nflares\nflares\n"
 }
 {
-  "body": "Ranga beards unite. "
+  "body": "Gravity's Rainbow"
 }
 {
-  "body": "at least you put the roll on the right way"
+  "body": "i think i see the NSA's backdoor"
 }
-Fetched 3 record(s) in 803ms
+
+Fetched 3 record(s) in 245591ms
 ```
