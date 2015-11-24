@@ -208,3 +208,18 @@ test> db.reddit.find({author: /^a/}, {_id:0, author:1}).skip(5).limit(5)
   "author": "adalab"
 }
 ```
+
+Wyświetlenie 3 wpisów autora "Vhisic" (pominięcie pierwszych 10)
+```sh
+test> db.reddit.find({author: "vhisic"}, {_id:0, body:1}).skip(10).limit(3)
+{
+  "body": "http://us.battle.net/wow/en/character/shadowmoon/Ipoonjoo/advanced"
+}
+{
+  "body": "Ranga beards unite. "
+}
+{
+  "body": "at least you put the roll on the right way"
+}
+Fetched 3 record(s) in 803ms
+```
