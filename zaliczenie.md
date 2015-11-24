@@ -153,7 +153,7 @@ Fetched 2510 record(s) in 671475ms
  
  Przykładowy dokument z kolekcji reddit
  ```sh
- natalia(mongod-2.6.3) test> db.reddit.find({author: "vhisic"}).limit(1)
+test> db.reddit.find({author: "vhisic"}).limit(1)
 {
   "_id": ObjectId("564b635081d89fc9eec8a4ae"),
   "score_hidden": false,
@@ -186,4 +186,25 @@ Niestety nie da rady wyświetlić wyników..
   "errmsg": "exception: group() can't handle more than 20000 unique keys",
   "code": 17203,
   "ok": 0
+```
+
+Wywświetlenie 5-ciu autorów na literę A, (pominięcie pierwszych 5-ciu).
+
+```sh
+test> db.reddit.find({author: /^a/}, {_id:0, author:1}).skip(5).limit(5)
+{
+  "author": "animationLand"
+}
+{
+  "author": "allergictoapples"
+}
+{
+  "author": "acini"
+}
+{
+  "author": "andaag"
+}
+{
+  "author": "adalab"
+}
 ```
