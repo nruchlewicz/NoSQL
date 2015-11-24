@@ -255,3 +255,16 @@ db.reddit.group({
    finalize: function(out) { out.avg_author_len = out.total_author_len/ out.author_count; } 
    } );
 ```
+
+**Po 45 minutach oczekiwania zwątpiłam..**
+2. Grupowanie po score większym, równym 45, a mniejszym niż 46
+```sh
+[
+  {
+    "score": 45,
+    "author_count": 17968,
+    "total_author_len": 195135,
+    "avg_author_len": 10.860140249332146
+  }
+]
+```
