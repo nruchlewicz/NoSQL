@@ -226,3 +226,21 @@ test> db.reddit.find({author: "zombie1939"}, {_id:0, body:1}).skip(10).limit(3)
 
 Fetched 3 record(s) in 245591ms
 ```
+
+Wyświetlenie 3 wpisów z wynikiem 1024 lub 2048.
+```sh
+db.reddit.find({score : {$in: [1024, 2048]}},{_id:0, subreddit:1, score: 1}).limit(3)
+{
+  "subreddit": "hiphopheads",
+  "score": 1024
+}
+{
+  "score": 1024,
+  "subreddit": "TumblrInAction"
+}
+{
+  "subreddit": "AskReddit",
+  "score": 2048
+}
+Fetched 3 record(s) in 13642ms
+```
