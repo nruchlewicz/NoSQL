@@ -10,7 +10,7 @@ switched to db mydb
 >db.dropDatabase()
 >
 ```
-###Wyświetlenie więcej wyników niż 20...
+###Wyświetlenie więcej wyników niż 20... <potrzebne>
 ```sh
 DBQuery.shellBatchSize = 300000000000000
 ```
