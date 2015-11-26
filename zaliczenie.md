@@ -382,7 +382,7 @@ db.stacje.find({ loc: {$near: {$geometry: pkt}}},{_id:0,  city:1}).limit(5).toAr
   }
 ]
 ```
-Mapka
+[Mapka](https://github.com/nruchlewicz/NoSQL/blob/master/point.geojson "Mapka Point's")
 
 4. Line String
 
@@ -435,5 +435,7 @@ db.stacje.find({ loc: {$geoWithin : { $geometry: { type : "Polygon",  coordinate
 }
 
 ```
-Mapka: 
+
+[Mapka1](https://github.com/nruchlewicz/NoSQL/blob/master/mapka.geojson "Mapka polygon")
+
 5. 
