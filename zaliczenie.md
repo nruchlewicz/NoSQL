@@ -1,6 +1,6 @@
 ##Zaliczenie, Ruchlewicz Natalia
 
-###Zadanie 1 EDA.
+###Zadanie 2 EDA.
 ####Przygotowanie bazy/kolekcji
 1. Pobrałam plik
 
@@ -300,3 +300,46 @@ test> db.reddit.group({
 ]
 ```
 
+###Zadanie 2d GeoJSON
+
+Pobrałam GeoJsony zestacjami paliw Orlen.
+####Import do MongoDB
+```sh
+
+time mongoimport -d GeoOrlen -c stacje < orlen.json
+#connected to: 127.0.0.1
+#2015-11-25T11:10:22.170+0100 check 9 1245
+#2015-11-25T11:10:22.170+0100 imported 1245 objects
+
+#real	0m0.217s
+#user	0m0.040s
+#sys	0m0.020s
+```
+1. Po zalogowaniu sie do bazy **mongo**, dodanie geo-indeksu do kolekcji stacje.
+```sh
+db.stacje.ensureIndex({"loc": "2dsphere"})
+{
+  "createdCollectionAutomatically": false,
+  "numIndexesBefore": 1,
+  "numIndexesAfter": 2,
+  "ok": 1
+}
+```
+
+2. Wyświetlenie przykładowego jsona.
+```sh
+GeoOrlen> db.stacje.find().skip(5).limit(1)
+{
+  "_id": ObjectId("5655890eda9f01fcd706881c"),
+  "loc": {
+    "type": "Point",
+    "coordinates": [
+      18.72245,
+      53.48882
+    ]
+  },
+  "name": "Stacje paliw Orlen",
+  "city": "Michale"
+}
+Fetched 1 record(s) in 0ms
+```
