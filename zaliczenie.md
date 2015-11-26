@@ -1,4 +1,4 @@
-##Zaliczenie, Ruchlewicz Natalia
+##Zaliczenie, Ruchlewicz Natalia :panda_face: 
 
 ###Zadanie 2 EDA.
 ####Przygotowanie bazy/kolekcji
