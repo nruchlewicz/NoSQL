@@ -358,6 +358,11 @@ Fetched 1 record(s) in 0ms
 ``` 
 10 najbliższych stacji od punktu 
 ```sh
+var pkt= {
+ "type" : "Point", 
+    "coordinates" : [ 19.02995109558105,53.9202633713449 ] 
+};
+
 db.stacje.find({ loc: {$near: {$geometry: pkt}}},{_id:0,  city:1}).limit(5).toArray()
 [
   {
