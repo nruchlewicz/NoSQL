@@ -356,6 +356,28 @@ Fetched 1 record(s) in 0ms
   "$err": "Can't canonicalize query: BadValue geo near accepts just one argument when querying for a GeoJSON point. Extra field found: $maxDistance: 2200.0",
   "code": 17287
 ``` 
+10 najbliższych stacji od punktu 
+```sh
+db.stacje.find({ loc: {$near: {$geometry: pkt}}},{_id:0,  city:1}).limit(5).toArray()
+[
+  {
+    "city": "Sztum"
+  },
+  {
+    "city": "Malbork"
+  },
+  {
+    "city": "Gniew"
+  },
+  {
+    "city": "Prabuty"
+  },
+  {
+    "city": "Kwidzyn"
+  }
+]
+```
+Mapka
 
 4. Line String
 
