@@ -350,6 +350,12 @@ Fetched 1 record(s) in 0ms
 ```
 
 3. Point
+```sh
+ GeoOrlen> db.GeoOrlen.find({ loc: {$near: {$geometry:[19.03175354003906, 53.91930297491356]}, $maxDistance: 2200} }).toArray()
+2015-11-26T19:56:11.297+0100 error: {
+  "$err": "Can't canonicalize query: BadValue geo near accepts just one argument when querying for a GeoJSON point. Extra field found: $maxDistance: 2200.0",
+  "code": 17287
+``` 
 
 4. Line String
 
