@@ -80,8 +80,6 @@
 ,
 { "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [  17.55784,  54.75084 ] }, "properties" : { "Stacja paliw Orlen" : "Łeba" } }
 ,
-{ "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [  16.83994,  53.9016 ] }, "properties" : { "Stacja paliw Orlen" : "Biały Bór" } }
-,
 { "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [  17.48575,  54.18691 ] }, "properties" : { "Stacja paliw Orlen" : "Bytów" } }
 ,
 { "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [  17.49779,  54.18072 ] }, "properties" : { "Stacja paliw Orlen" : "Bytów" } }
@@ -114,10 +112,7 @@
 ,
 { "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [  19.209648,  53.754585 ] }, "properties" : { "Stacja paliw Orlen" : "Prabuty" } }
 ,
-{ "type": "Feature", "geometry" : { "type" : "Polygon", "coordinates" : [[[16.6992, 54.8358], 
-[19.6470, 54.8358],  
-[19.6470, 53.4909], 
-[16.6992,53.4909], 
+{ "type": "Feature", "geometry" : { "type" : "Polygon", "coordinates" : [[[16.6992, 54.8358],[19.6470, 54.8358],  [19.6470, 53.4909], [16.6992,53.4909], 
 [16.6992, 54.8358]]] }, "properties" : { "Województwo" : "Pomorskie" } }
 ]
 }
