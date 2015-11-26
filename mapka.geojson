@@ -1,28 +1,9 @@
 {
 "type" : "FeatureCollection",
 "features": [
-{ "loc": {    "type": "Point",    "coordinates": [18.662809 ,54.403565]  },  "name": "Stacje paliw Orlen", "city": "Gdańsk"
-}
-{  "loc": {
-    "type": "Point",
-    "coordinates": [
-      19.11751,
-      54.32629
-    ]
-  },
-  "name": "Stacje paliw Orlen",
-  "city": "Stegna"
-}
-{  "loc": {
-    "type": "Point",
-    "coordinates": [
-      19.10635,
-      54.21281
-    ]
-  },
-  "name": "Stacje paliw Orlen",
-  "city": "Nowy Dwór Gdański"
-}
+{ "loc": {"type": "Point","coordinates": [18.662809 ,54.403565]  },"name": "Stacje paliw Orlen", "city": "Gdańsk"}
+{ "loc": {"type": "Point","coordinates": [19.11751, 54.32629] }, "name": "Stacje paliw Orlen",  "city": "Stegna"}
+{ "loc": {"type": "Point","coordinates": [19.10635, 54.21281] }, "name": "Stacje paliw Orlen", "city": "Nowy Dwór Gdański"}
 {  "loc": {
     "type": "Point",
     "coordinates": [
