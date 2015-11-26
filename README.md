@@ -18,8 +18,12 @@ procesor
  32-bit czy 64-bit
 
 
-<table border="1">
-<tr><th>PROCESOR       <td>Quad-Core Processor (up to 1.4GHz) 1.00GHz    </tr></td>
-<tr><th>PAMIĘĆ RAM     <td> 4,00GB </tr></td>
-<tr><th>SYSTEM OPERACYJNY<td>Windows 8.1 64bit.  </tr></td>
+
+| Nazwa  | Wartość   | 
+| :--------- |:------| 
+| Dysk      |500GB | 
+| Procesor    | Intel Core i5-430M 2.26 GHz   | 
+| Pamiec  | 4096 MB Hynix DDR3, 2x 2 GB | 
+| System Operacyjny       |  Linux  Ubuntu 15.04| 
+| Typ systemu| 64 bit |
 
