@@ -2,9 +2,9 @@
 
 ###Zadanie 2 EDA.
 ####Przygotowanie bazy/kolekcji
-1. Pobrałam plik
+1 . Pobrałam plik
 
-2. Zaimportowałam plik do mongoDB poleceniem:
+2 . Zaimportowałam plik do mongoDB poleceniem:
 
 ```sh
 time bunzip2 -c RC_2015-01.bz2 | mongoimport --drop --host 127.0.0.1 -d test -c reddit
@@ -16,13 +16,13 @@ time bunzip2 -c RC_2015-01.bz2 | mongoimport --drop --host 127.0.0.1 -d test -c 
 #sys       4m29.768s
 ```
 
-3. Historia Procesora:
+3 . Historia Procesora:
 
 
 
 image
 
-4. Następnie połączyłam się z mongo. I przeszłam do bazy test i wybrałam kolekcję redit.
+4 . Następnie połączyłam się z mongo. I przeszłam do bazy test i wybrałam kolekcję redit.
 
 ```sh
 mongo
@@ -53,7 +53,7 @@ Czyli ilość zaimportowanycj jsonów się zgadza.
 
 ####Przykładowe  zapytania
 
-1. Znajdz pierwsze.
+1 . Znajdz pierwsze.
 ```sh
 db.reddit.findOne()
 {
@@ -81,12 +81,12 @@ db.reddit.findOne()
   "edited": false
 }
 ```
-2. 
+2 . 
 ```sh
 db.reddit.distinct("score").length
 4635
 ```
-3. Wyświetlenie wszystkich autorów
+3 . Wyświetlenie wszystkich autorów
 
 Wyświetlenie 10 autorów ```(db.reddit.find({},{author:1})``` zajmuje *1ms*.
 
@@ -122,7 +122,7 @@ db.reddit.find({},{author:1})
 (...)
 ```
 
-4. Wywietlenie postów z wynikiem wikszym od 3000. //Wyświetlono ostatni (największy) score.
+4 . Wywietlenie postów z wynikiem wikszym od 3000. //Wyświetlono ostatni (największy) score.
 ```sh
 test> db.reddit.find({score: { $gte: 3000}})
 {
@@ -152,7 +152,7 @@ test> db.reddit.find({score: { $gte: 3000}})
 Fetched 2510 record(s) in 671475ms
  ```
  
-5. Przykładowy dokument z kolekcji reddit
+5 . Przykładowy dokument z kolekcji reddit
 
  ```sh
 test> db.reddit.find({author: "vhisic"}).limit(1)
@@ -182,7 +182,7 @@ test> db.reddit.find({author: "vhisic"}).limit(1)
 }
 ```
 
-6. Grupowanie wzglęgdem atrybutu *author* + licznik wystąpień
+6 . Grupowanie wzglęgdem atrybutu *author* + licznik wystąpień
 Niestety nie da rady wyświetlić wyników.. 
 ```sh
 2015-11-23T14:00:30.541+0100 group command failed: {
@@ -191,7 +191,7 @@ Niestety nie da rady wyświetlić wyników..
   "ok": 0
 ```
 
-7. Wywświetlenie 5-ciu autorów na literę A, (pominięcie pierwszych 5-ciu).
+7 . Wywświetlenie 5-ciu autorów na literę A, (pominięcie pierwszych 5-ciu).
 
 ```sh
 test> db.reddit.find({author: /^a/}, {_id:0, author:1}).skip(5).limit(5)
@@ -214,7 +214,7 @@ Fetched 5 record(s) in 1ms
 
 ```
 
-8. Wyświetlenie 3 wpisów autora "zombie1939" (pominięcie pierwszych 10)
+8 . Wyświetlenie 3 wpisów autora "zombie1939" (pominięcie pierwszych 10)
 ```sh
 test> db.reddit.find({author: "zombie1939"}, {_id:0, body:1}).skip(10).limit(3)
 {
@@ -230,7 +230,7 @@ test> db.reddit.find({author: "zombie1939"}, {_id:0, body:1}).skip(10).limit(3)
 Fetched 3 record(s) in 245591ms
 ```
 
-9. Wyświetlenie 3 wpisów z wynikiem 1024 lub 2048.
+9 . Wyświetlenie 3 wpisów z wynikiem 1024 lub 2048.
 ```sh
 db.reddit.find({score : {$in: [1024, 2048]}},{_id:0, subreddit:1, score: 1}).limit(3)
 {
@@ -247,7 +247,7 @@ db.reddit.find({score : {$in: [1024, 2048]}},{_id:0, subreddit:1, score: 1}).lim
 }
 Fetched 3 record(s) in 13642ms
 ```
-10. Wyświetlenie 5-ciu pierwszych wpisów autorów xanaxxanaxxanax i brazen
+10 . Wyświetlenie 5-ciu pierwszych wpisów autorów xanaxxanaxxanax i brazen
 ```sh
 test> db.reddit.find({author: {$in: ["xanaxxanaxxanax", "brazen"]}}, {_id:0, author:1, body:1}).limit(5)
 {
@@ -274,7 +274,7 @@ Fetched 5 record(s) in 61803ms
 ``` 
 
 ####Grupowania:
-1. Grupowanie po wyniku (score) większym, równym 45, mniejszym niż 55
+1 . Grupowanie po wyniku (score) większym, równym 45, mniejszym niż 55
 ```sh
 test> db.reddit.group({
    cond: {"score": {$gte: 45, $lt:55}} ,     
@@ -285,7 +285,7 @@ test> db.reddit.group({
 ```
 
 **Po 45 minutach oczekiwania zwątpiłam..**
-2. Grupowanie po score większym, równym 45, a mniejszym niż 46
+2 . Grupowanie po score większym, równym 45, a mniejszym niż 46
 ```sh
 test> db.reddit.group({    
     cond: {"score": {$gte: 45, $lt:46}} ,     
@@ -320,7 +320,7 @@ time mongoimport -d GeoOrlen -c stacje < orlen.json
 ```
 ####Przykłady
 
-1. Po zalogowaniu sie do bazy **mongo**, dodanie geo-indeksu do kolekcji stacje.
+1 . Po zalogowaniu sie do bazy **mongo**, dodanie geo-indeksu do kolekcji stacje.
 ```sh
 db.stacje.ensureIndex({"loc": "2dsphere"})
 {
@@ -331,7 +331,7 @@ db.stacje.ensureIndex({"loc": "2dsphere"})
 }
 ```
 
-2. Wyświetlenie przykładowego jsona.
+2 . Wyświetlenie przykładowego jsona.
 ```sh
 GeoOrlen> db.stacje.find().skip(5).limit(1)
 {
@@ -349,14 +349,14 @@ GeoOrlen> db.stacje.find().skip(5).limit(1)
 Fetched 1 record(s) in 0ms
 ```
 
-3. Point
+#####3 . Point
 ```sh
  GeoOrlen> db.GeoOrlen.find({ loc: {$near: {$geometry:[19.03175354003906, 53.91930297491356]}, $maxDistance: 2200} }).toArray()
 2015-11-26T19:56:11.297+0100 error: {
   "$err": "Can't canonicalize query: BadValue geo near accepts just one argument when querying for a GeoJSON point. Extra field found: $maxDistance: 2200.0",
   "code": 17287
 ``` 
-10 najbliższych stacji od punktu 
+     10 najbliższych stacji od punktu 
 ```sh
 var pkt= {
  "type" : "Point", 
@@ -384,9 +384,9 @@ db.stacje.find({ loc: {$near: {$geometry: pkt}}},{_id:0,  city:1}).limit(5).toAr
 ```
 [Mapka](https://github.com/nruchlewicz/NoSQL/blob/master/point.geojson "Mapka Point's")
 
-4. Line String
+#####4 . Line String
 
-5.Polyon. Wyświetlenie stacji(miejscowosci) na danym obszarze.
+#####5 .Polyon. Wyświetlenie stacji(miejscowosci) na danym obszarze.
 ```sh
 db.stacje.find({ loc: {$geoWithin : { $geometry: { type : "Polygon",  coordinates: [
  [ [
@@ -438,4 +438,3 @@ db.stacje.find({ loc: {$geoWithin : { $geometry: { type : "Polygon",  coordinate
 
 [Mapka1](https://github.com/nruchlewicz/NoSQL/blob/master/mapka.geojson "Mapka polygon")
 
-5. 
