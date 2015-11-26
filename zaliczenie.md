@@ -447,3 +447,4 @@ db.stacje.find({ loc: {$geoWithin : { $geometry: { type : "Polygon",  coordinate
 
 [Mapka1](https://github.com/nruchlewicz/NoSQL/blob/master/mapka.geojson "Mapka polygon")
 
+####Postgres - później ;) 👀
