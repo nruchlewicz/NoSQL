@@ -15,6 +15,7 @@ time bunzip2 -c RC_2015-01.bz2 | mongoimport --drop --host 127.0.0.1 -d test -c 
 #user     121m4.976s
 #sys       4m29.768s
 ```
+![import](https://github.com/nruchlewicz/NoSQL/blob/master/img/import.jpg)
 
 3 . Historia Procesora:
 
@@ -22,7 +23,7 @@ time bunzip2 -c RC_2015-01.bz2 | mongoimport --drop --host 127.0.0.1 -d test -c 
 
 ![Pamiec](https://github.com/nruchlewicz/NoSQL/blob/master/img/pamiec1.jpg)
 
-Obserwacje: Procesory były obciążane od 20 do 100 procent, równomiernie. Pamięć była wykorzystywana do max. 20%. 
+**Obserwacje: Procesory były obciążane od 20 do 98 procent, równomiernie. Pamięć była wykorzystywana do max. 20%. Dysk był obciżony nawet do 100%.**
 
 4 . Następnie połączyłam się z mongo. I przeszłam do bazy test i wybrałam kolekcję redit.
 
@@ -83,6 +84,10 @@ db.reddit.findOne()
   "edited": false
 }
 ```
+![procesor2](https://github.com/nruchlewicz/NoSQL/blob/master/img/dysk.img)
+![pamiec2](https://github.com/nruchlewicz/NoSQL/blob/master/img/pamiec2.img)
+
+**Obciążenie procesora i pamięci przy wyszukiwaniu. Nie były to wielkie obciążenia. Dysk pracował na 100%... **
 2 . 
 ```sh
 db.reddit.distinct("score").length
@@ -153,6 +158,7 @@ test> db.reddit.find({score: { $gte: 3000}})
 }
 Fetched 2510 record(s) in 671475ms
  ```
+ ![find](https://github.com/nruchlewicz/NoSQL/blob/master/img/find.jpg)
  
 5 . Przykładowy dokument z kolekcji reddit
 
