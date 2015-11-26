@@ -5,5 +5,7 @@
 {"type": "Feature", "geometry":  {"type": "Point","coordinates": [19.11751, 54.32629] }, "properties": {"Stacje paliw Orlen" : "Stegna"}}
 {"type": "Feature", "geometry": {"type": "Point","coordinates": [19.10635, 54.21281] }, "properties": {"Stacje paliw Orlen": "Nowy Dwór Gdański"}}
 
+{"type": "Feature", "geometry" : {"type" : "Polygon", "coordinates": [[[16.6992, 54.8358], [19.6470, 54.8358],  [19.6470, 53.4909], [16.6992,53.4909], [16.6992, 54.8358]]] }, "properties": {" Wojewodztwo Pomorskie"
+}}
 ]
 }
