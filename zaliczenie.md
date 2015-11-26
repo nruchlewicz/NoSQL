@@ -84,8 +84,9 @@ db.reddit.findOne()
   "edited": false
 }
 ```
-![procesor2](https://github.com/nruchlewicz/NoSQL/blob/master/img/dysk.img)
-![pamiec2](https://github.com/nruchlewicz/NoSQL/blob/master/img/pamiec2.img)
+![procesor2](https://github.com/nruchlewicz/NoSQL/blob/master/img/dysk2.jpg)
+
+![pamiec2](https://github.com/nruchlewicz/NoSQL/blob/master/img/pamiec2.jpg)
 
 **Obciążenie procesora i pamięci przy wyszukiwaniu. Nie były to wielkie obciążenia. Dysk pracował na 100%... **
 2 . 
