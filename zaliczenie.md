@@ -353,27 +353,32 @@ Fetched 1 record(s) in 0ms
 
 4. Line String
 
-5.Polyon
+5.Polyon. Wyświetlenie stacji(miejscowosci) na danym obszarze.
 ```sh
-db.stacje.find({ 
-loc: {$geoWithin : { $geometry: { type : "Polygon",  
-coordinates: [[[16.6992, 54.8358], 
-[19.6470, 54.8358],  
-[19.6470, 53.4909], 
-[16.6992,53.4909], 
-[16.6992, 54.8358]]] } } }},{_id:0, city:1} )
-{
-  "city": "Gdańsk"
-}
-{
-  "city": "Stegna"
-}
-{
-  "city": "Nowy Dwór Gdański"
-}
-{
-  "city": "Elbląg"
-}
+db.stacje.find({ loc: {$geoWithin : { $geometry: { type : "Polygon",  coordinates: [
+...           [
+...             [
+...               18.72894287109375,
+...               53.71296473440685
+...             ],
+...             [
+...               18.72894287109375,
+...               54.10611237685854
+...             ],
+...             [
+...               19.47601318359375,
+...               54.10611237685854
+...             ],
+...             [
+...               19.47601318359375,
+...               53.71296473440685
+...             ],
+...             [
+...               18.72894287109375,
+...               53.71296473440685
+...             ]
+...           ]
+...         ] } } }},{_id:0, city:1} )
 {
   "city": "Malbork"
 }
@@ -382,150 +387,6 @@ coordinates: [[[16.6992, 54.8358],
 }
 {
   "city": "Tczew"
-}
-{
-  "city": "Pszczółki"
-}
-{
-  "city": "Koszwały"
-}
-{
-  "city": "Gdańsk"
-}
-{
-  "city": "Gdańsk"
-}
-{
-  "city": "Gdańsk"
-}
-{
-  "city": "Gdańsk"
-}
-{
-  "city": "Gdańsk"
-}
-{
-  "city": "Trąbki Wielkie"
-}
-{
-  "city": "Egiertowo"
-}
-{
-  "city": "Kartuzy"
-}
-{
-  "city": "Kartuzy"
-}
-{
-  "city": "Żukowo"
-}
-{
-  "city": "Gdańsk"
-}
-{
-  "city": "Gdynia"
-}
-{
-  "city": "Gdynia"
-}
-{
-  "city": "Rumia"
-}
-{
-  "city": "Rumia"
-}
-{
-  "city": "Gdynia"
-}
-{
-  "city": "Puck"
-}
-{
-  "city": "Władysławowo"
-}
-{
-  "city": "Wejherowo"
-}
-{
-  "city": "Wejherowo"
-}
-{
-  "city": "Lębork"
-}
-{
-  "city": "Odargowo"
-}
-{
-  "city": "Lębork"
-}
-{
-  "city": "Sierakowice"
-}
-{
-  "city": "Słupsk"
-}
-{
-  "city": "Słupsk"
-}
-{
-  "city": "Kobylnica"
-}
-{
-  "city": "Słupsk"
-}
-{
-  "city": "Ustka"
-}
-{
-  "city": "Główczyce"
-}
-{
-  "city": "Łeba"
-}
-{
-  "city": "Marcelin"
-}
-{
-  "city": "Biały Bór"
-}
-{
-  "city": "Bytów"
-}
-{
-  "city": "Bytów"
-}
-{
-  "city": "Człuchów"
-}
-{
-  "city": "Chojnice"
-}
-{
-  "city": "Chojnice"
-}
-{
-  "city": "Tuchola"
-}
-{
-  "city": "Czersk"
-}
-{
-  "city": "Brusy"
-}
-{
-  "city": "Kościerzyna"
-}
-{
-  "city": "Zblewo"
-}
-{
-  "city": "Skórcz"
-}
-{
-  "city": "Starogard Gdański"
-}
-{
-  "city": "Starogard Gdański"
 }
 {
   "city": "Gniew"
@@ -537,12 +398,9 @@ coordinates: [[[16.6992, 54.8358],
   "city": "Kwidzyn"
 }
 {
-  "city": "Nowe"
-}
-{
   "city": "Prabuty"
 }
-Fetched 60 record(s) in 5ms
+
 ```
 Mapka: 
 5. 
