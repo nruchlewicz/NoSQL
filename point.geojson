@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [ 19.04468,  53.9144 ] }, "properties" : { "Stacja paliw Orlen" : "Sztum" } }
+,
+{ "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [ 19.01104,  54.03809 ] }, "properties" : { "Stacja paliw Orlen" : "Malbork" } }
+,
+{ "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [ 18.81892, 53.83276 ] }, "properties" : { "Stacja paliw Orlen" : "Gniew" } }
+,
+{ "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [ 19.209648, 53.754585 ] }, "properties" : { "Stacja paliw Orlen" : "Prabuty" } }
+,
+{ "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [ 18.94309,  53.71649] }, "properties" : { "Stacja paliw Orlen" : "Kwidzyn" } }
+]
+}
