@@ -42,6 +42,7 @@ show collections
 ``` 
 
 ####Count
+
 Sprawdziłam, czy wszystkie jsony zaimportowały się poprawnie, za pomocą polecenia:
 
 ```sh
@@ -152,6 +153,7 @@ Fetched 2510 record(s) in 671475ms
  ```
  
 5. Przykładowy dokument z kolekcji reddit
+
  ```sh
 test> db.reddit.find({author: "vhisic"}).limit(1)
 {
@@ -179,6 +181,7 @@ test> db.reddit.find({author: "vhisic"}).limit(1)
   "edited": false
 }
 ```
+
 6. Grupowanie wzglęgdem atrybutu *author* + licznik wystąpień
 Niestety nie da rady wyświetlić wyników.. 
 ```sh
