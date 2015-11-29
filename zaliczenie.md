@@ -328,6 +328,7 @@ time mongoimport -d GeoOrlen -c stacje < orlen.json
 #sys	0m0.020s
 ```
 ####Przykłady
+Do utworzenia mapki korzystalam z [geojson.io](  http://geojson.io/#map=2/20.0/0.0)
 
 1 . Po zalogowaniu sie do bazy **mongo**, dodanie geo-indeksu do kolekcji stacje.
 ```sh
@@ -359,12 +360,30 @@ Fetched 1 record(s) in 0ms
 ```
 
 #####3 . Point
+Stacje w odleglosci 20km od wroclawia. 
 ```sh
- GeoOrlen> db.GeoOrlen.find({ loc: {$near: {$geometry:[19.03175354003906, 53.91930297491356]}, $maxDistance: 2200} }).toArray()
-2015-11-26T19:56:11.297+0100 error: {
-  "$err": "Can't canonicalize query: BadValue geo near accepts just one argument when querying for a GeoJSON point. Extra field found: $maxDistance: 2200.0",
-  "code": 17287
+> db.stacje.find({loc: {$near: {$geometry: {type: "Point", coordinates: [ 17.037048, 51.110419]}, $maxDistance: 20000}}}).skip(1)
+
+{ "loc" : { "type" : "Point", "coordinates" : [17.022860,51.116420] }, "name" : "Stacje paliw Orlen", "city" : "Wrocław" }
+{ "loc" : { "type" : "Point", "coordinates" : [17.092880,51.141100] }, "name" : "Stacje paliw Orlen", "city" : "Wrocław" }
+{ "loc" : { "type" : "Point", "coordinates" : [16.969750,51.050260] }, "name" : "Stacje paliw Orlen", "city" : "Bielany Wrocławskie" }
+{ "loc" : { "type" : "Point", "coordinates" : [17.070970,51.114250] }, "name" : "Stacje paliw Orlen", "city" : "Wrocław" }
+{ "loc" : { "type" : "Point", "coordinates" : [17.046440,51.126630] }, "name" : "Stacje paliw Orlen", "city" : "Wrocław" }
+{ "loc" : { "type" : "Point", "coordinates" : [16.992590,51.098040] }, "name" : "Stacje paliw Orlen", "city" : "Wrocław" }
+{ "loc" : { "type" : "Point", "coordinates" : [16.882910,51.144160] }, "name" : "Stacje paliw Orlen", "city" : "Wrocław" }
+{ "loc" : { "type" : "Point", "coordinates" : [17.117040,51.113720] }, "name" : "Stacje paliw Orlen", "city" : "Wrocław" }
+{ "loc" : { "type" : "Point", "coordinates" : [16.966460,51.130190] }, "name" : "Stacje paliw Orlen", "city" : "Wrocław" }
+{ "loc" : { "type" : "Point", "coordinates" : [17.057960,51.094610] }, "name" : "Stacje paliw Orlen", "city" : "Wrocław" }
+{ "loc" : { "type" : "Point", "coordinates" : [17.058330,51.112190] }, "name" : "Stacje paliw Orlen", "city" : "Wrocław" }
+{ "loc" : { "type" : "Point", "coordinates" : [17.029400,51.145880] }, "name" : "Stacje paliw Orlen", "city" : "Wrocław" }
+{ "loc" : { "type" : "Point", "coordinates" : [17.018120,51.106770] }, "name" : "Stacje paliw Orlen", "city" : "Wrocław" }
+{ "loc" : { "type" : "Point", "coordinates" : [17.127463,51.041774] }, "name" : "Stacje paliw Orlen", "city" : "Siechnice" }
+{ "loc" : { "type" : "Point", "coordinates" : [17.190342,51.066131] }, "name" : "Stacje paliw Orlen", "city" : "Gajków" }
+{ "loc" : { "type" : "Point", "coordinates" : [16.966174,51.213621] }, "name" : "Stacje paliw Orlen", "city" : "Szewce" }
+{ "loc" : { "type" : "Point", "coordinates" : [16.790780,51.158080] }, "name" : "Stacje paliw Orlen", "city" : "Lutynia" }
+{ "loc" : { "type" : "Point", "coordinates" : [16.833170,50.987760] }, "name" : "Stacje paliw Orlen", "city" : "Gniechowice" }
 ``` 
+[Mapka Point](www)_
      10 najbliższych stacji od punktu 
 ```sh
 var pkt= {
