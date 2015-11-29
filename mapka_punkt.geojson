@@ -1,0 +1,184 @@
+{
+  "type": "FeatureCollection",  "features": [    {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wroclaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [17.022860,51.116420] 
+      }
+    },
+     {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wroclaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [17.092880,51.141100] 
+      }
+    },
+      {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Bieland Wroclawskie"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [16.969750,51.050260]
+      }
+    },
+   {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wrocaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [17.070970,51.114250]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wrocaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [17.046440,51.126630]
+      }
+    },
+      {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wrocaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [16.992590,51.098040] 
+      }
+    },
+  {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wrocaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [16.882910,51.144160] 
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wrocaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[17.117040,51.113720] 
+      }
+    },
+     {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wrocaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[16.966460,51.130190]
+      }
+    },
+   {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wrocaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [17.057960,51.094610]
+      }
+    },
+  {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wrocaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [17.058330,51.112190]
+      }
+    },
+   {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wrocaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [17.029400,51.145880]
+      }
+    },
+  {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wrocaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [17.018120,51.106770]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Siechnice"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [17.127463,51.041774]
+      }
+    },
+   {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Gajków"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [17.190342,51.066131]
+      }
+    },
+      {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Szewce"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [16.966174,51.213621]
+      }
+    },
+  },
+      {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Lutynia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [16.790780,51.158080] 
+      }
+    },
+     {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Gniechowice"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [16.833170,50.987760] 
+      }
+    },
+ ]
+}
