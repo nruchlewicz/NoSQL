@@ -10,12 +10,7 @@ Rozwiązania zadań z przedmiotu *Bazy NoSQL*:
  - [ ] Aggregation Pipeline
  - [ ] MapReduce
 
-Informacje o komputerze na którym były wykonywane obliczenia:
 
-procesor
-* ile pamięci RAM, jaki dysk (HD, SSD)
-* jaki system operacyjny + wersja,
- 32-bit czy 64-bit
 
 
 
