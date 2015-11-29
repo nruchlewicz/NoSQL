@@ -421,7 +421,7 @@ db.stacje.find({loc: {$geoIntersects: {$geometry: {type: "LineString", coordinat
 "city" : "Szczecin" }
 "city" : "Rzeszów" }
 ```
-[Mapka linia] (www_)
+[Mapka linia](https://github.com/nruchlewicz/NoSQL/blob/master/mapka_linia.geojson "Mapka String Szczecin-Rzeszów")
 
 #####5 .Polyon. Wyświetlenie stacji(miejscowosci) na danym obszarze.
 ```sh
