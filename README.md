@@ -26,4 +26,5 @@ procesor
 | Pamiec  | 4096 MB Hynix DDR3, 2x 2 GB | 
 | System Operacyjny       |  Linux  Ubuntu 15.04| 
 | Typ systemu| 64 bit |
+|Wersja MongoDB| 2.6.0|
 
