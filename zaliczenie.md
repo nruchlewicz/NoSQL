@@ -84,6 +84,27 @@ db.reddit.findOne()
   "edited": false
 }
 ```
+
+-**_id** - id objektu zaimporotwanego do MongoDB
+
+-**name, link_id, parent_id, subreddit_id, id** - rożne id, niepotrzebnie widoczne, nic nie wnosza do wyników wyszukiwania, tylko powoduja nadmiar danych. 
+
+-**body**- tresc posta
+
+-**creted_utc**- data w formacie string
+
+-**score**- wynik
+
+-**author**- Nick osoby, która utworzyla dany post
+
+-**subreddit**- tytul posta
+
+-**ups**- polubienia
+
+-**controversiality**- czy temat jest kontrowersyjny
+
+-**edited**- czy post byl edytowany.
+
 ![procesor2](https://github.com/nruchlewicz/NoSQL/blob/master/img/dysk2.jpg)
 
 ![pamiec2](https://github.com/nruchlewicz/NoSQL/blob/master/img/pamiec2.jpg)
