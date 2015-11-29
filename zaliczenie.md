@@ -383,8 +383,9 @@ Stacje w odleglosci 20km od wroclawia.
 { "loc" : { "type" : "Point", "coordinates" : [16.790780,51.158080] }, "name" : "Stacje paliw Orlen", "city" : "Lutynia" }
 { "loc" : { "type" : "Point", "coordinates" : [16.833170,50.987760] }, "name" : "Stacje paliw Orlen", "city" : "Gniechowice" }
 ``` 
-[Mapka Point](www)_
-     10 najbliższych stacji od punktu 
+[Mapka Point](https://github.com/nruchlewicz/NoSQL/blob/master/mapka_punkt.geojson "Mapka point's Wroclaw")
+
+10 najbliższych stacji od punktu 
 ```sh
 var pkt= {
  "type" : "Point", 
@@ -412,7 +413,15 @@ db.stacje.find({ loc: {$near: {$geometry: pkt}}},{_id:0,  city:1}).limit(5).toAr
 ```
 [Mapka](https://github.com/nruchlewicz/NoSQL/blob/master/point.geojson "Mapka Point's")
 
-#####4 . Line String
+#####4 . Line String. Wywietlenie stacji na lini Szczecin- Rzeszów
+
+```sh
+db.stacje.find({loc: {$geoIntersects: {$geometry: {type: "LineString", coordinates: [[14.570300,53.442940] ,[21.994270,50.057750]]}}}},{_id=0, city:1})
+
+"city" : "Szczecin" }
+"city" : "Rzeszów" }
+```
+[Mapka linia] (www_)
 
 #####5 .Polyon. Wyświetlenie stacji(miejscowosci) na danym obszarze.
 ```sh
