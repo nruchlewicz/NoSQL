@@ -14,3 +14,9 @@ switched to db mydb
 ```sh
 DBQuery.shellBatchSize = 300000000000000
 ```
+
+FindOne opisać co tam jest. 
+Skasować Neo4.
+z rgzaminu wybrać jedno. i drugie skasować. 
+Zrobić Postgresa na 13 XII 2015r. 
+Jakies obserwacje, zamula/ niezamula. 
