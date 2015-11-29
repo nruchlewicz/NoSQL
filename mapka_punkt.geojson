@@ -161,7 +161,6 @@
         "coordinates": [16.966174,51.213621]
       }
     },
-  },
       {
       "type": "Feature",
       "properties": {
@@ -179,7 +178,7 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates":  [16.833170,50.987760        ]
+        "coordinates":  [16.833170,50.987760 ]
       }
     }
   ]
