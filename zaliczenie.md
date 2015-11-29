@@ -2,7 +2,7 @@
 
 ###Zadanie 2 EDA.
 ####Przygotowanie bazy/kolekcji
-1 . Pobrałam plik
+1 . Pobrałam plik z bazy komentarzy Reddit (5.5GB)
 
 2 . Zaimportowałam plik do mongoDB poleceniem:
 
