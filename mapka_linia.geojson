@@ -1,0 +1,38 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            18.477135,
+            54.380675
+          ],
+          [
+            17.79721,
+            54.55172
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"Stacje paliw Orlen" : "Rzeszów"},
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [22.011470,50.063440]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"Stacje paliw Orlen" : "Szczecin"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [14.570300,53.442940] 
+      }
+    }
+  ]
+}
