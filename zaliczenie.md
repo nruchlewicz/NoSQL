@@ -181,10 +181,7 @@ Fetched 550 record(s) in 1106623ms
 
  ```sh
 test> db.reddit.find({author: "vhisic"}).count()
-{
-  
-
-}
+#428
 ```
 
 6 . Grupowanie wzglęgdem atrybutu *author* + licznik wystąpień
