@@ -117,15 +117,15 @@ db.reddit.distinct("score").length
 ```
 3 . Wyświetlenie wszystkich autorów
 
-Wyświetlenie 10 autorów ```(db.reddit.find({},{author:1})``` zajmuje *1ms*.
+Wyświetlenie 10 autorów ```(db.reddit.find({},{author:1}).limit(10)``` zajmuje *1ms*.
 
-Wyświetlenie 100 autorów ```(db.reddit.find({},{author:1})``` zajmuje *8ms*.
+Wyświetlenie 100 autorów ```(db.reddit.find({},{author:1}).limit(100)``` zajmuje *8ms*.
 
-Wyświetlenie 1000 autorów ```(db.reddit.find({},{author:1})``` zajmuje *87ms*.
+Wyświetlenie 1000 autorów ```(db.reddit.find({},{author:1}).limit(1000)``` zajmuje *87ms*.
 
-Wyświetlenie 10000 autorów ```(db.reddit.find({},{author:1})``` zajmuje *814ms*.
+Wyświetlenie 10000 autorów ```(db.reddit.find({},{author:1}).limit(10000)``` zajmuje *814ms*.
 
-Wyświetlenie 100000 autorów ```(db.reddit.find({},{author:1})``` zajmuje *8226ms*.
+Wyświetlenie 100000 autorów ```(db.reddit.find({},{author:1}).limit(100000)``` zajmuje *8226ms*.
 
 Wyświetlenie wszyskich trwa ( *bardzo dłuuuuuugo* )
 
@@ -303,6 +303,12 @@ test> db.reddit.group({
     "srednia_dl_wpisu": 182.4057769367765
   }
 ]
+```
+3. Agregacja, suma *score* ale autora *Brazen*
+```sh
+db.reddit.aggregate ([   
+  { $match: { "author": "brazen"  } },   
+  {  $group: { _id: "$author", total:{ $sum: "$score"  } } } ])
 ```
 
 ###Zadanie 2d GeoJSON
