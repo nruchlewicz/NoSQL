@@ -309,6 +309,17 @@ test> db.reddit.group({
 db.reddit.aggregate ([   
   { $match: { "author": "brazen"  } },   
   {  $group: { _id: "$author", total:{ $sum: "$score"  } } } ])
+  
+  {
+  "result": [
+    {
+      "_id": "brazen",
+      "total": 1178
+    }
+  ],
+  "ok": 1
+}
+
 ```
 
 ###Zadanie 2d GeoJSON
