@@ -1,6 +1,17 @@
 ##Zaliczenie, Ruchlewicz Natalia :panda_face: 
 
 ###Zadanie 2 EDA.
+|Polecenie | MonboDB | Postgres|
+|---------|---------|----------|
+|Rozpakowanie i import| W jednej lini wpisujemy polecenie do rozpakowania i importu. Procesory są wykorzystwane naprzemiennie, równomiernie. Pamięć była wykorzystwana max. 20%. Dysk -100%, Było słychać jak pracuje.  | NAjpierw musimy rozpakować plik, następnie za pomocą programu *pgfutter* musimy zaimportować plik do postgresa.  |Procesory są mniej obciążnone niż w przypadku mongoDB, dysk był mocno obciążony. Laptop głośno pracował. |
+|czas trwania | 121 minut | 145 minut|
+|Zliczenie rekordów| Czas: natychmiast| Czas: ok 24 minut.|
+|Inne polecenia| W mongoDB niektóre wyszukiwania zajmowały dużo czasu, komputer __Zamulał__ dysk był obciążony na 100%.Nie można było korzystać z lapotpa.. | W postgresie selecty róœnież zajmowały dużo czasu, ale znacznie więcej niż Mongo.  Komputer również __zamulał__ |
+|Przegląd kolekcji| Używałam *MongoHacker* dzięki czemu rekordy były dobrze widoczne, "kolorowe", dobrze się czytało te dane. |Wszystkie dane w jednej lini, ciężko przeczytać cokolwiek|
+|Obsługa poleceń| trudna składnia bardziej złożonych poleceń, dużó ({[]}), trzeba uważać by dobrze wszystko wpisać| łatwiejsza składnia, bardziej intuicyjna *select * from ... where*, lepsza znajomość poleceń, ze względu na korzystanie w poprzednich latach na zajęciach z postgresa. 
+|Ogólne wrażenie (0-5\*) | *** (Szkoda dysku :) )  | * (zbyt długie wyszukiwanie, zbyt skomplikowany import) |
+
+
 ####Przygotowanie bazy/kolekcji
 1 . Pobrałam plik z bazy komentarzy Reddit (5.5GB)
 
@@ -486,3 +497,20 @@ db.stacje.find({ loc: {$geoWithin : { $geometry: { type : "Polygon",  coordinate
 [Mapka1](https://github.com/nruchlewicz/NoSQL/blob/master/mapka.geojson "Mapka polygon")
 
 ####Postgres - później ;) 👀
+Wcześniej pobrany plik z komentarzami bazy Reddit (5.5GB), rozpakowałam używając bunzip2. 
+Następnie za pomocą [Pgfutter](https://github.com/lukasmartinelli/pgfutter) zaimporotwałam jsony
+```sh
+time | pgfutter --db postgres --user postgres --pw natalia json RC_2015_03
+#29.47GB / 29.47GB [================================================] 100% 145m.604s
+#53851542 rows imported into import.rc_2015_03
+
+#real     121m3.423s
+#user     145m4.604s
+#sys       12m32.103s
+```
+#####Zliczenie rekordów count
+```sh
+select count(*) from import.rc_2015_03;
+##53851542
+```
+Wszystkie rekordy zaimportowały się poprawnie, sprawdzenie ilości trwało bardzo długo.. ok 24 minut. 
