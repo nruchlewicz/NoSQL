@@ -514,3 +514,20 @@ select count(*) from import.rc_2015_03;
 ##53851542
 ```
 Wszystkie rekordy zaimportowały się poprawnie, sprawdzenie ilości trwało bardzo długo.. ok 24 minut. 
+
+Pierwszy Json (w jedej linijce)
+```sh
+1 | { "score_hidden": false,"name": "t1_cnas8zv", "link_id": "t3_2qyr1a", "body": "Most of us have some family members like this. *Most* of my family is like this. ", "downs": 0, "created_utc": "1420070400", "score": 14,"author": "YoungModern", "distinguished": null, "id": "cnas8zv", "archived": false, "parent_id": "t3_2qyr1a", "subreddit": "exmormon", "author_flair_css_class": null, "author_flair_text": null, "gilded": 0, "retrieved_on": 1425124282, "ups": 14,  "controversiality": 0, "subreddit_id": "t5_2r0gj", "edited": false}+
+  |
+(1 wiersz)
+```
+Wyświetlenie 3 wpisów autora __zombie1939__ z pominięciem pierwszych dziesięćiu
+```sh
+ SELECT data->>'body' AS body FROM import.rc_2015_03 WHERE data->>'author' = 'zombie1939' LIMIT 3 OFFSET 10;
+        body
+  -------------------------------------
+   BRRRRRRRT\nflares\nflares\nflares\n
+   Gravity's Rainbow
+   i think i see the NSA's backdoor
+  (3 wiersze)
+```
