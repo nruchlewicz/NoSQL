@@ -22,4 +22,5 @@ Rozwiązania zadań z przedmiotu *Bazy NoSQL*:
 | System Operacyjny       |  Linux  Ubuntu 15.04| 
 | Typ systemu| 64 bit |
 |Wersja MongoDB| 2.6.0|
+|Wersja Postgres | 9.4.5 | 
 
