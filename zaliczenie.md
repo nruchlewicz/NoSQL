@@ -186,7 +186,7 @@ test> db.reddit.find({score: { $gte: 4000}}, {_id:0, author:1, body:1, subreddit
 
 Fetched 550 record(s) in 1106623ms
  ```
- ![find](https://github.com/nruchlewicz/NoSQL/blob/master/img/find.jpg)
+
  
 5 . Zliczenie wpisów autoa "vhisic"
 
