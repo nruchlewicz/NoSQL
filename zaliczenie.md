@@ -416,9 +416,13 @@ GeoOrlen> db.stacje.find().skip(5).limit(1)
 Fetched 1 record(s) in 0ms
 ```
 **_id** - id z mongoDB
-**loc type**- typ obiektu, punkt.
+
+**loc type**- typ obiektu, punkt
+
 **coordinates ** - wspołrzędne geograficzne
+
 **name** - nazwa stacji
+
 **city** - nazwa mista 
 
 #####3 . Point
