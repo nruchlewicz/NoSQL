@@ -15,8 +15,10 @@ switched to db mydb
 DBQuery.shellBatchSize = 300000000000000
 ```
 
-FindOne opisać co tam jest. 
-Skasować Neo4.
-z rgzaminu wybrać jedno. i drugie skasować. 
-Zrobić Postgresa na 13 XII 2015r. 
-Jakies obserwacje, zamula/ niezamula. 
+
+
+Napisać na początku , że to z bazy reddit. Przykładowy rekord wkleić na początek. Przed tabele. 
+Opis - lista.
+Przeliczyć jednostki na km, 
+Zmienić 10 stacji na 5. i zaznaczyć punkt na np. czerwono. 
+Literówki ;) (mongo i dużo, Wrocław)
