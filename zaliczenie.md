@@ -3,12 +3,12 @@
 ###Zadanie 2 EDA.
 |Polecenie | MonboDB | Postgres|
 |---------|---------|----------|
-|Rozpakowanie i import| W jednej lini wpisujemy polecenie do rozpakowania i importu. Procesory są wykorzystwane naprzemiennie, równomiernie. Pamięć była wykorzystwana max. 20%. Dysk -100%, Było słychać jak pracuje.  | NAjpierw musimy rozpakować plik, następnie za pomocą programu *pgfutter* musimy zaimportować plik do postgresa.  |Procesory są mniej obciążnone niż w przypadku mongoDB, dysk był mocno obciążony. Laptop głośno pracował. |
+|Rozpakowanie i import| W jednej lini wpisujemy polecenie do rozpakowania i importu. Procesory są wykorzystwane naprzemiennie, równomiernie. Pamięć była wykorzystwana max. 20%. Dysk -100%, Było słychać jak pracuje.  | NAjpierw musimy rozpakować plik, następnie za pomocą programu *pgfutter* musimy zaimportować plik do postgresa. :-1:  |Procesory są mniej obciążnone niż w przypadku mongoDB, dysk był mocno obciążony. Laptop głośno pracował. |
 |czas trwania | 121 minut | 145 minut|
-|Zliczenie rekordów| Czas: natychmiast| Czas: ok 24 minut.|
+|Zliczenie rekordów| Czas: natychmiast :+1: | Czas: ok 24 minut. :-1: |
 |Inne polecenia| W mongoDB niektóre wyszukiwania zajmowały dużo czasu, komputer __Zamulał__ dysk był obciążony na 100%.Nie można było korzystać z lapotpa.. | W postgresie selecty róœnież zajmowały dużo czasu, ale znacznie więcej niż Mongo.  Komputer również __zamulał__ |
-|Przegląd kolekcji| Używałam *MongoHacker* dzięki czemu rekordy były dobrze widoczne, "kolorowe", dobrze się czytało te dane. |Wszystkie dane w jednej lini, ciężko przeczytać cokolwiek|
-|Obsługa poleceń| trudna składnia bardziej złożonych poleceń, dużó ({[]}), trzeba uważać by dobrze wszystko wpisać| łatwiejsza składnia, bardziej intuicyjna *select * from ... where*, lepsza znajomość poleceń, ze względu na korzystanie w poprzednich latach na zajęciach z postgresa. 
+|Przegląd kolekcji| Używałam *MongoHacker* dzięki czemu rekordy były dobrze widoczne, "kolorowe", dobrze się czytało te dane. :+1: |Wszystkie dane w jednej lini, ciężko przeczytać cokolwiek :-1: |
+|Obsługa poleceń| trudna składnia bardziej złożonych poleceń, dużó ({[]}), trzeba uważać by dobrze wszystko wpisać :1: | łatwiejsza składnia, bardziej intuicyjna *select * from ... where*, lepsza znajomość poleceń, ze względu na korzystanie w poprzednich latach na zajęciach z postgresa. :+1:
 |Ogólne wrażenie (0-5\*) | *** (Szkoda dysku :) )  | * (zbyt długie wyszukiwanie, zbyt skomplikowany import) |
 
 
