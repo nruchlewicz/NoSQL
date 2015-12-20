@@ -419,7 +419,7 @@ Fetched 1 record(s) in 0ms
 
 **loc type**- typ obiektu, punkt
 
-**coordinates ** - wspołrzędne geograficzne
+**coordinates** - wspołrzędne geograficzne
 
 **name** - nazwa stacji
 
