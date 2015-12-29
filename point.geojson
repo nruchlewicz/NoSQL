@@ -1,9 +1,7 @@
 {
 "type": "FeatureCollection",
                                                                                 
-"features": [
-  {
-      "type": "Feature", {"geometry": {"type": "Point",  "coordinates": [  19.05187, 53.91062] },  "properties":  {"marker-color": "#d53939"}}
+{"features": "type": "Feature", "geometry": {"type": "Point",  "coordinates": [  19.05187, 53.91062] },  "properties":  {"marker-color": "#d53939"}}
 { "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [ 19.04468,  53.9144 ] }, "properties" : { "Stacja paliw Orlen" : "Sztum" } }
 ,
 { "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [ 19.01104,  54.03809 ] }, "properties" : { "Stacja paliw Orlen" : "Malbork" } }
