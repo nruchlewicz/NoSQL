@@ -1,15 +1,65 @@
 ##Zaliczenie, Ruchlewicz Natalia :panda_face: 
 
 ###Zadanie 2 EDA.
-|Polecenie | MonboDB | Postgres|
+
+Do zadania użyłam plik z bazy komentarzy [Reddit](https://www.reddit.com/r/datasets/comments/3bxlg7/i_have_every_publicly_available_reddit_comment) (5.5GB) 
+Przykładowy JSON:
+```sh
+{
+  "_id": ObjectId("564b635081d89fc9eec8a4ac"),
+  "score_hidden": false,
+  "name": "t1_cnas8zv",
+  "link_id": "t3_2qyr1a",
+  "body": "Most of us have some family members like this. *Most* of my family is like this. ",
+  "downs": 0,
+  "created_utc": "1420070400",
+  "score": 14,
+  "author": "YoungModern",
+  "distinguished": null,
+  "id": "cnas8zv",
+  "archived": false,
+  "parent_id": "t3_2qyr1a",
+  "subreddit": "exmormon",
+  "author_flair_css_class": null,
+  "author_flair_text": null,
+  "gilded": 0,
+  "retrieved_on": 1425124282,
+  "ups": 14,
+  "controversiality": 0,
+  "subreddit_id": "t5_2r0gj",
+  "edited": false
+}
+```
+
+-**_id** - id objektu zaimporotwanego do MongoDB
+
+-**name, link_id, parent_id, subreddit_id, id** - rożne id, niepotrzebnie widoczne, nic nie wnosza do wyników wyszukiwania, tylko powoduja nadmiar danych. 
+
+-**body**- tresc posta
+
+-**creted_utc**- data w formacie string
+
+-**score**- wynik
+
+-**author**- Nick osoby, która utworzyla dany post
+
+-**subreddit**- tytul posta
+
+-**ups**- polubienia
+
+-**controversiality**- czy temat jest kontrowersyjny
+
+-**edited**- czy post byl edytowany.
+
+|Polecenie | MongoDB | Postgres|
 |---------|---------|----------|
-|Rozpakowanie i import| W jednej lini wpisujemy polecenie do rozpakowania i importu. Procesory są wykorzystwane naprzemiennie, równomiernie. Pamięć była wykorzystwana max. 20%. Dysk -100%, Było słychać jak pracuje.  | NAjpierw musimy rozpakować plik, następnie za pomocą programu *pgfutter* musimy zaimportować plik do postgresa. :-1:  |Procesory są mniej obciążnone niż w przypadku mongoDB, dysk był mocno obciążony. Laptop głośno pracował. |
+|Rozpakowanie i import| W jednej lini wpisujemy polecenie do rozpakowania i importu. Procesory są wykorzystwane naprzemiennie, równomiernie. Pamięć była wykorzystwana max. 20%. Dysk -100%, Było słychać jak pracuje.  | Najpierw musimy rozpakować plik, następnie za pomocą programu *pgfutter* musimy zaimportować plik do postgresa. :-1:  |Procesory są mniej obciążnone niż w przypadku mongoDB, dysk był mocno obciążony. Laptop głośno pracował. |
 |czas trwania | 121 minut | 145 minut|
 |Zliczenie rekordów| Czas: natychmiast :+1: | Czas: ok 24 minut. :-1: |
 |Inne polecenia| W mongoDB niektóre wyszukiwania zajmowały dużo czasu, komputer __Zamulał__ dysk był obciążony na 100%.Nie można było korzystać z lapotpa.. | W postgresie selecty róœnież zajmowały dużo czasu, ale znacznie więcej niż Mongo.  Komputer również __zamulał__ |
 |Przegląd kolekcji| Używałam *MongoHacker* dzięki czemu rekordy były dobrze widoczne, "kolorowe", dobrze się czytało te dane. :+1: |Wszystkie dane w jednej lini, ciężko przeczytać cokolwiek :-1: |
 |Obsługa poleceń| trudna składnia bardziej złożonych poleceń, dużó ({[]}), trzeba uważać by dobrze wszystko wpisać :+1: | łatwiejsza składnia, bardziej intuicyjna *select * from ... where*, lepsza znajomość poleceń, ze względu na korzystanie w poprzednich latach na zajęciach z postgresa. :+1:
-|Ogólne wrażenie (0-5\*) | *** (Szkoda dysku :) )  | * (zbyt długie wyszukiwanie, zbyt skomplikowany import) |
+|Ogólne wrażenie (0-5\*) | :+1: :+1: :+1: (Szkoda dysku :) )  | :+1: (zbyt długie wyszukiwanie, zbyt skomplikowany import) |
 
 
 ####Przygotowanie bazy/kolekcji
@@ -95,26 +145,6 @@ db.reddit.findOne()
   "edited": false
 }
 ```
-
--**_id** - id objektu zaimporotwanego do MongoDB
-
--**name, link_id, parent_id, subreddit_id, id** - rożne id, niepotrzebnie widoczne, nic nie wnosza do wyników wyszukiwania, tylko powoduja nadmiar danych. 
-
--**body**- tresc posta
-
--**creted_utc**- data w formacie string
-
--**score**- wynik
-
--**author**- Nick osoby, która utworzyla dany post
-
--**subreddit**- tytul posta
-
--**ups**- polubienia
-
--**controversiality**- czy temat jest kontrowersyjny
-
--**edited**- czy post byl edytowany.
 
 ![procesor2](https://github.com/nruchlewicz/NoSQL/blob/master/img/dysk2.jpg)
 
@@ -451,11 +481,11 @@ Stacje w odleglosci 20km od wroclawia.
 ``` 
 [Mapka Point](https://github.com/nruchlewicz/NoSQL/blob/master/mapka_punkt.geojson "Mapka point's Wroclaw")
 
-10 najbliższych stacji od punktu 
+5 najbliższych stacji od punktu 
 ```sh
 var pkt= {
  "type" : "Point", 
-    "coordinates" : [ 19.02995109558105,53.9202633713449 ] 
+    "coordinates" : [   19.05187, 53.91062 ] 
 };
 
 db.stacje.find({ loc: {$near: {$geometry: pkt}}},{_id:0,  city:1}).limit(5).toArray()
