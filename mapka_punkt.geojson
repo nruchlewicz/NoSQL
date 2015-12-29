@@ -8,37 +8,36 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [17.022860,51.116420] 
+        "coordinates": [
+          17.02286,
+          51.11642
+        ]
       }
     },
-     {
+    {
       "type": "Feature",
       "properties": {
         "Stacje paliw Orlen": "Wroclaw"
       },
       "geometry": {
         "type": "Point",
-        "coordinates":  [17.092880,51.141100] 
+        "coordinates": [
+          17.09288,
+          51.1411
+        ]
       }
     },
-      {
+    {
       "type": "Feature",
       "properties": {
         "Stacje paliw Orlen": "Bieland Wroclawskie"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [16.969750,51.050260]
-      }
-    },
-   {
-      "type": "Feature",
-      "properties": {
-        "Stacje paliw Orlen": "Wrocaw"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [17.070970,51.114250]
+        "coordinates": [
+          16.96975,
+          51.05026
+        ]
       }
     },
     {
@@ -48,27 +47,10 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [17.046440,51.126630]
-      }
-    },
-      {
-      "type": "Feature",
-      "properties": {
-        "Stacje paliw Orlen": "Wrocaw"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [16.992590,51.098040] 
-      }
-    },
-  {
-      "type": "Feature",
-      "properties": {
-        "Stacje paliw Orlen": "Wrocaw"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [16.882910,51.144160] 
+        "coordinates": [
+          17.07097,
+          51.11425
+        ]
       }
     },
     {
@@ -78,57 +60,114 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates":[17.117040,51.113720] 
+        "coordinates": [
+          17.04644,
+          51.12663
+        ]
       }
     },
-     {
+    {
       "type": "Feature",
       "properties": {
         "Stacje paliw Orlen": "Wrocaw"
       },
       "geometry": {
         "type": "Point",
-        "coordinates":[16.966460,51.130190]
+        "coordinates": [
+          16.99259,
+          51.09804
+        ]
       }
     },
-   {
+    {
       "type": "Feature",
       "properties": {
         "Stacje paliw Orlen": "Wrocaw"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [17.057960,51.094610]
+        "coordinates": [
+          16.88291,
+          51.14416
+        ]
       }
     },
-  {
+    {
       "type": "Feature",
       "properties": {
         "Stacje paliw Orlen": "Wrocaw"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [17.058330,51.112190]
+        "coordinates": [
+          17.11704,
+          51.11372
+        ]
       }
     },
-   {
+    {
       "type": "Feature",
       "properties": {
         "Stacje paliw Orlen": "Wrocaw"
       },
       "geometry": {
         "type": "Point",
-        "coordinates":  [17.029400,51.145880]
+        "coordinates": [
+          16.96646,
+          51.13019
+        ]
       }
     },
-  {
+    {
       "type": "Feature",
       "properties": {
         "Stacje paliw Orlen": "Wrocaw"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [17.018120,51.106770]
+        "coordinates": [
+          17.05796,
+          51.09461
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wrocaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.05833,
+          51.11219
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wrocaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.0294,
+          51.14588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Stacje paliw Orlen": "Wrocaw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.01812,
+          51.10677
+        ]
       }
     },
     {
@@ -138,47 +177,99 @@
       },
       "geometry": {
         "type": "Point",
-        "coordinates":  [17.127463,51.041774]
+        "coordinates": [
+          17.127463,
+          51.041774
+        ]
       }
     },
-   {
+    {
       "type": "Feature",
       "properties": {
         "Stacje paliw Orlen": "Gajków"
       },
       "geometry": {
         "type": "Point",
-        "coordinates":  [17.190342,51.066131]
+        "coordinates": [
+          17.190342,
+          51.066131
+        ]
       }
     },
-      {
+    {
       "type": "Feature",
       "properties": {
         "Stacje paliw Orlen": "Szewce"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [16.966174,51.213621]
+        "coordinates": [
+          16.966174,
+          51.213621
+        ]
       }
     },
-      {
+    {
       "type": "Feature",
       "properties": {
         "Stacje paliw Orlen": "Lutynia"
       },
       "geometry": {
         "type": "Point",
-        "coordinates":  [16.790780,51.158080] 
+        "coordinates": [
+          16.79078,
+          51.15808
+        ]
       }
     },
-     {
+    {
       "type": "Feature",
       "properties": {
         "Stacje paliw Orlen": "Gniechowice"
       },
       "geometry": {
         "type": "Point",
-        "coordinates":  [16.833170,50.987760 ]
+        "coordinates": [
+          16.83317,
+          50.98776
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#b50200",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#ffc8b7",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              16.775436401367188,
+              50.982208525112874
+            ],
+            [
+              16.775436401367188,
+              51.22279768927183
+            ],
+            [
+              17.225189208984375,
+              51.22279768927183
+            ],
+            [
+              17.225189208984375,
+              50.982208525112874
+            ],
+            [
+              16.775436401367188,
+              50.982208525112874
+            ]
+          ]
+        ]
       }
     }
   ]
