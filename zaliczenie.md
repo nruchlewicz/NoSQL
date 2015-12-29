@@ -58,7 +58,7 @@ Przykładowy JSON:
 |Zliczenie rekordów| Czas: natychmiast :+1: | Czas: ok 24 minut. :-1: |
 |Inne polecenia| W mongoDB niektóre wyszukiwania zajmowały dużo czasu, komputer __Zamulał__ dysk był obciążony na 100%.Nie można było korzystać z lapotpa.. | W postgresie selecty róœnież zajmowały dużo czasu, ale znacznie więcej niż Mongo.  Komputer również __zamulał__ |
 |Przegląd kolekcji| Używałam *MongoHacker* dzięki czemu rekordy były dobrze widoczne, "kolorowe", dobrze się czytało te dane. :+1: |Wszystkie dane w jednej lini, ciężko przeczytać cokolwiek :-1: |
-|Obsługa poleceń| trudna składnia bardziej złożonych poleceń, dużó ({[]}), trzeba uważać by dobrze wszystko wpisać :+1: | łatwiejsza składnia, bardziej intuicyjna *select * from ... where*, lepsza znajomość poleceń, ze względu na korzystanie w poprzednich latach na zajęciach z postgresa. :+1:
+|Obsługa poleceń| trudna składnia bardziej złożonych poleceń, dużo ({[]}), trzeba uważać by dobrze wszystko wpisać :-1: | łatwiejsza składnia, bardziej intuicyjna *select * from ... where*, lepsza znajomość poleceń, ze względu na korzystanie w poprzednich latach na zajęciach z postgresa. :+1:
 |Ogólne wrażenie (0-5\*) | :+1: :+1: :+1: (Szkoda dysku :) )  | :+1: (zbyt długie wyszukiwanie, zbyt skomplikowany import) |
 
 
