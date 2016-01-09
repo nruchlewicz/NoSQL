@@ -1,4 +1,4 @@
-##Egzamin, Ruchlewicz Natalia 
+##Egzamin, Ruchlewicz Natalia
 
 1. Import
 2. Rozgrzewka- proste zapytania
