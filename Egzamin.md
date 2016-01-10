@@ -9,7 +9,7 @@
 
 
 ###Import
-Do eksperymentów użyłam niezbyt dużego pliku [restauracje.json](https://raw.githubusercontent.com/mongodb/docs-assets/primer-dataset/dataset.json). Obliczenia wykonywałam na tym samum sprzecie co zaliczenia. 
+Do eksperymentów użyłam niezbyt dużego pliku [restauracje.json](https://dl.dropboxusercontent.com/u/15056258/mongodb/restaurant.json). Obliczenia wykonywałam na tym samum sprzecie co zaliczenia. 
 
 Zaimportowanie do bazy MongoDB
 ```sh
