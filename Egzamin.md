@@ -53,12 +53,20 @@ db.restauracje.findOne()
 }
 
 ```
-Dlugosc nazwy
+- **_id** - id obiektu nadane w MongoDB
+- **URL** - adres strony internetowej danej restauracji
+- **adress** i **adress line 2** - dokadny adres restauracji
+- **name** - nazwa restauracji
+- **outcode** i **postcode** - kody pocztowe
+- **rating**- ranking restauracji
+- **Type_of_food**- typ serwowanego jedzenia.
+
+**Dlugosc nazwy**
 ```sh
 db.restauracje.distinct("name").length
 #1586
 ```
-Rodzaje jedzenia.
+**Rodzaje serwowanego jedzenia w restauracjach **
 ```sh
 db.restauracje.distinct("type_of_food").sort()
 [
@@ -117,7 +125,7 @@ db.restauracje.distinct("type_of_food").sort()
 ]
 ```
 ####Zapytania z rzutowaniem i sortowaniem
-Zapytania z rzutowaniem i sortowaniem:
+**Posortowanie restauracji wg. nazwy i wywietlenie pierwszych 10**
 ```sh
 restauracje> db.restauracje.find({}, {name: 1, _id: 0}).sort({word:1}).limit(10)
 {
