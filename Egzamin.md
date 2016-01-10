@@ -473,8 +473,8 @@ db.restauracje.aggregate( [
   "ok": 1
 }
 ```
-
-```sh
+**suma rankingu wszystkich restauracji**
+```js
 db.restauracje.aggregate(
  { $group: {_id: "outcode", totalRating: {$sum: "$rating"}}},
  { $match: {totalRating: {$gte: 100}}}
@@ -490,7 +490,22 @@ db.restauracje.aggregate(
   "ok": 1
 }
 ```
-
+**Średnia ocena wszystkich restauracji**
+```js
+db.restauracje.aggregate(
+ { $group: {_id: "name", avgRating: {$avg: "$rating"}}}
+ )
+ 
+{
+  "result": [
+    {
+      "_id": "name",
+      "avgRating": 4,9070422
+    }
+  ],
+  "ok": 1
+}
+```
 
 
 ##Grupowania
