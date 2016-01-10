@@ -505,7 +505,22 @@ db.restauracje.aggregate(
   "ok": 1
 }
 ```
-
+```**Najwyższa ocena restauracji** *ciekawe*
+```js
+db.restauracje.aggregate(
+ { $group: {_id: "name", maxRating: {$max: "$rating"}}}
+ )
+ 
+{
+  "result": [
+    {
+      "_id": "name",
+      "maxRating": "not yet rated"
+    }
+  ],
+  "ok": 1
+}
+```
 
 **Średnia ocena wszystkich restauracji**
 ```js
@@ -523,7 +538,6 @@ db.restauracje.aggregate(
   "ok": 1
 }
 ```
-
 
 ##Grupowania
 ```js
