@@ -127,7 +127,7 @@ db.restauracje.distinct("type_of_food").sort()
 ####Zapytania z rzutowaniem i sortowaniem
 **Posortowanie restauracji wg. nazwy i wywietlenie pierwszych 10**
 ```sh
-restauracje> db.restauracje.find({}, {name: 1, _id: 0}).sort({word:1}).limit(10)
+restauracje> db.restauracje.find({}, {name: 1, _id: 0}).sort({name:1}).limit(10)
 {
   "name": ".CN Chinese"
 }
@@ -162,7 +162,7 @@ Fetched 10 record(s) in 333ms
 ```
 
 ```sh
-db.restauracje.find({}, {name: 1, _id: 0}).sort({word: -1}).skip(120).limit(10)
+db.restauracje.find({}, {name: 1, _id: 0}).sort({name: -1}).skip(120).limit(10)
 {
   "name": "A&A Peri Peri"
 }
@@ -197,7 +197,7 @@ db.restauracje.find({}, {name: 1, _id: 0}).sort({word: -1}).skip(120).limit(10)
 
 Restauracje zaczynające się na 3. Wyświetlnie pierwszych trzech.
 ```sh
-db.restauracje.find({"name": /^3/}, {_id: 0}).sort({word: 1}).limit(3)
+db.restauracje.find({"name": /^3/}, {_id: 0}).sort({name: 1}).limit(3)
 {
   "URL": "http://www.just-eat.co.uk/restaurants-3chefsfishbar-de21/menu",
   "address": "47 Roosevelt Avenue",
@@ -259,7 +259,7 @@ Fetched 2 record(s) in 2ms
 
 Wyświetlenie restauracji z rankingiem większym, równym 6.
 ```sh
-db.restauracje.find({rating: {$gte: 6}},{_id: 0, name: 1, rating:1 })
+db.restauracje.find({rating: {$gte: 6}},{_id: 0, name: 1, rating:1 }).limit(3)
 {
   "name": "@Indian.com",
   "rating": 6
@@ -272,201 +272,13 @@ db.restauracje.find({rating: {$gte: 6}},{_id: 0, name: 1, rating:1 })
   "name": "Aarthi",
   "rating": 6
 }
-{
-  "name": "Abshar Indian Cuisine",
-  "rating": 6
-}
-{
-  "name": "Agra",
-  "rating": 6
-}
-{
-  "name": "Aji - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Akash Accrington",
-  "rating": 6
-}
-{
-  "name": "Al Frango",
-  "rating": 6
-}
-{
-  "name": "Al Medina Delights - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Alcatraz Caffe Bournemouth",
-  "rating": 6
-}
-{
-  "name": "Alex Plaice",
-  "rating": 6
-}
-{
-  "name": "Alex Plaice",
-  "rating": 6
-}
-{
-  "name": "All Siam Thai Restaurant - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Amina",
-  "rating": 6
-}
-{
-  "name": "Ammanford Fish Bar",
-  "rating": 6
-}
-{
-  "name": "Andover Tandoori - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Andover Tandoori - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Angeethi Indian Express",
-  "rating": 6
-}
-{
-  "name": "Anis's - The Taste of Perfection",
-  "rating": 6
-}
-{
-  "name": "Ann's Thai@ The Bulls Head",
-  "rating": 6
-}
-{
-  "name": "Arabesque",
-  "rating": 6
-}
-{
-  "name": "Ark Burger & Salad Bar",
-  "rating": 6
-}
-{
-  "name": "Aroma Bar Restaurant Takeaway - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Aroma Bar Restaurant Takeaway - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Asli Zaiqa",
-  "rating": 6
-}
-{
-  "name": "Aspendos",
-  "rating": 6
-}
-{
-  "name": "Atash Persian Restaurant - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Atash Persian Restaurant - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Athena B Fish Bar - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Athena B Fish Bar - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Atlantic Gourmet",
-  "rating": 6
-}
-{
-  "name": "Ayubowan",
-  "rating": 6
-}
-{
-  "name": "Balti Hut",
-  "rating": 6
-}
-{
-  "name": "Barista House Restaurant & Cafe - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Barnacle Bills",
-  "rating": 6
-}
-{
-  "name": "Bath Sushi",
-  "rating": 6
-}
-{
-  "name": "Bearstead Fish Bar - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Beast Gourmet Burgers",
-  "rating": 6
-}
-{
-  "name": "Bella Panini",
-  "rating": 6
-}
-{
-  "name": "Benny's - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Benny's Grill House",
-  "rating": 6
-}
-{
-  "name": "Best Fish & Chips",
-  "rating": 6
-}
-{
-  "name": "Best Pizza",
-  "rating": 6
-}
-{
-  "name": "Best Pizza & Kebab",
-  "rating": 6
-}
-{
-  "name": "Best Pizza & Kebab",
-  "rating": 6
-}
-{
-  "name": "Big Fish - Collection Only",
-  "rating": 6
-}
-{
-  "name": "Big Saj",
-  "rating": 6
-}
-{
-  "name": "Big Saj",
-  "rating": 6
-}
-{
-  "name": "Biggapot Caribbean - Collection Only",
-  "rating": 6
-}
-#fatched 49 record(s) in 5ms
+
 ```
 
 
 R-cje z rankingiem 1<= x <=2
 ```sh
-db.restauracje.find({rating: {$gte: 1, $lte: 2}},{_id: 0, name: 1, rating:1 })
-{
-  "name": "Al Dixi Fried Chicken & Grill House",
-  "rating": 1
-}
+db.restauracje.find({rating: {$gte: 1, $lte: 2}},{_id: 0, name: 1, rating:1 }).limit(3)
 {
   "name": "Al Dixi Fried Chicken & Grill House",
   "rating": 1
@@ -479,36 +291,11 @@ db.restauracje.find({rating: {$gte: 1, $lte: 2}},{_id: 0, name: 1, rating:1 })
   "name": "Beiteddine",
   "rating": 1.5
 }
-{
-  "name": "Beiteddine",
-  "rating": 1.5
-}
-{
-  "name": "Benny's",
-  "rating": 1
-}
-{
-  "name": "Benny's",
-  "rating": 1
-}
-{
-  "name": "Big Boys Pizza",
-  "rating": 2
-}
-{
-  "name": "Big Boys Pizza",
-  "rating": 2
-}
-{
-  "name": "Big Boys Pizza",
-  "rating": 2
-}
-#Fetched 10 record(s) in 2ms
 ```
 ###JavaScript
 
 Restauracje z nazwą dłuższą niż 1, krótszą, równą  3.
-```sh
+```js
 db.restauracje.find({$where: "(this.name.length >=1) && (this.name.length <= 3)" })
 {
   "_id": ObjectId("55f14312c7447c3da7051c5e"),
@@ -559,7 +346,7 @@ db.restauracje.find({$where: "(this.name.length >=1) && (this.name.length <= 3)"
 ```
 
 Restauracje z rankingiem większym, równym 1, mniejszym, równym 2.
-```sh
+```js
 db.restauracje.find({$where: "(this.rating >=1) && (this.rating <= 2)" })
 {
   "_id": ObjectId("55f14312c7447c3da7051ceb"),
@@ -676,10 +463,11 @@ db.restauracje.find({$where: "(this.rating >=1) && (this.rating <= 2)" })
 
 ##Agregacje
 ```sh
-restauracje> db.restauracje.aggregate( [
-{$match: {rating: "2" }},
-{$group: {_id: "$cust_id", total: {$sum: "$amount"}}}
- ])
+db.restauracje.aggregate( [
+  {$match: {rating: "2" }},
+  {$group: {_id: "$cust_id", total: {$sum: "$amount"}}}
+   ])
+   
 {
   "result": [ ],
   "ok": 1
@@ -687,10 +475,11 @@ restauracje> db.restauracje.aggregate( [
 ```
 
 ```sh
-natalia(mongod-2.6.3) restauracje> coll.aggregate(
+db.restauracje.aggregate(
  { $group: {_id: "outcode", totalRating: {$sum: "$rating"}}},
  { $match: {totalRating: {$gte: 100}}}
  )
+ 
 {
   "result": [
     {
@@ -705,7 +494,7 @@ natalia(mongod-2.6.3) restauracje> coll.aggregate(
 
 
 ##Grupowania
-```sh
+```js
 var res = db.restauracje.group({
   key: {name: true}
   , initial: {count: 0}
@@ -716,9 +505,9 @@ res[0]
 # "name": ".CN Chinese",
 #  "count": 1
 #}
-
+```
 Top 10 najczęściej występujących nazw:
-```sh
+```js
 var top10 = res.sort(function(a,b){ return b.count - a.count; }).slice(0, 10);
 
 [
@@ -765,7 +554,7 @@ var top10 = res.sort(function(a,b){ return b.count - a.count; }).slice(0, 10);
 ]
 ```
 To samo co wyżej, pogrupowane wg. typu serwowanego jedzenia.
-```sh
+```js
 var food = db.restauracje.group({
   key: {type_of_food: true}
   , initial: {count: 0}
@@ -780,7 +569,7 @@ food[0]
 ```
 
 3 najpopularniejsze typy jedzenia
-```sh
+```js
 var food3 = food.sort(function(a,b){ return b.count - a.count; }).slice(0, 3);
 
 rastauracje> food3
@@ -800,7 +589,7 @@ rastauracje> food3
 ]
 ```
 
-```sh
+```js
 var winner = db.restauracje.find({name: [ "Best Kebab" ]})
 
 db.winners.drop();
