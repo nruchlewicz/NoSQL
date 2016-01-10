@@ -489,7 +489,24 @@ db.restauracje.aggregate(
   ],
   "ok": 1
 }
+```**Najniższa ocena restauracji**
+```js
+db.restauracje.aggregate(
+ { $group: {_id: "name", minRating: {$min: "$rating"}}}
+ )
+ 
+{
+  "result": [
+    {
+      "_id": "name",
+      "minRating": 1
+    }
+  ],
+  "ok": 1
+}
 ```
+
+
 **Średnia ocena wszystkich restauracji**
 ```js
 db.restauracje.aggregate(
