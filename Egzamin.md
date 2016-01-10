@@ -702,16 +702,7 @@ natalia(mongod-2.6.3) restauracje> coll.aggregate(
 }
 ```
 
-```sh
-db.users.aggregate(
-  [
-    { $unwind : "$rating" },
-    { $group : { _id : "$rating" , number : { $sum : 1 } } },
-    { $sort : { number : -1 } },
-    { $limit : 5 }
-  ]
-)
-```
+
 
 ##Grupowania
 ```sh
