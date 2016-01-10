@@ -489,7 +489,8 @@ db.restauracje.aggregate(
   ],
   "ok": 1
 }
-```**Najniższa ocena restauracji**
+```
+**Najniższa ocena restauracji**
 ```js
 db.restauracje.aggregate(
  { $group: {_id: "name", minRating: {$min: "$rating"}}}
@@ -505,7 +506,7 @@ db.restauracje.aggregate(
   "ok": 1
 }
 ```
-```**Najwyższa ocena restauracji** *ciekawe*
+**Najwyższa ocena restauracji** *ciekawe*
 ```js
 db.restauracje.aggregate(
  { $group: {_id: "name", maxRating: {$max: "$rating"}}}
