@@ -34,3 +34,5 @@ policzyć sredni rating w aggregacjach $agv
 jaka jest skala rating
 $sd
 grupowanie ``js
+
+buble chart
