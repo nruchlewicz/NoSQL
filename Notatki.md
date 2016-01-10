@@ -24,6 +24,7 @@ Zmienić 10 stacji na 5. i zaznaczyć punkt na np. czerwono.
 Literówki ;) (mongo i dużo, Wrocław)
 
 
+
 Zamienić word na name.
 Zrobić limit na rankingach restauracji.
 w java script usunac _id.
