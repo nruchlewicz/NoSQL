@@ -490,6 +490,7 @@ db.restauracje.aggregate(
   "ok": 1
 }
 ```
+
 **Najniższa ocena restauracji**
 ```js
 db.restauracje.aggregate(
@@ -565,7 +566,8 @@ db.restauracje.aggregate(
     "name": "Bella Pizza",
     "count": 23
   }]
-    
+```
+
 **3 najpopularniejsze typy serwowanego jedzenia: **
 ```js
 db.restauracje.aggregate(
