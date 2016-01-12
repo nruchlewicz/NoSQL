@@ -462,7 +462,7 @@ db.restauracje.find({$where: "(this.rating >=1) && (this.rating <= 2)" })
 ```
 
 ##Agregacje
-```sh
+```js
 db.restauracje.aggregate( [
   {$match: {rating: "2" }},
   {$group: {_id: "$cust_id", total: {$sum: "$amount"}}}
@@ -493,7 +493,8 @@ db.restauracje.aggregate(
 **Najniższa ocena restauracji**
 ```js
 db.restauracje.aggregate(
- { $group: {_id: "name", minRating: {$min: "$rating"}}}
+ { $group: 
+    {_id: "name", minRating: {$min: "$rating"}}}
  )
  
 {
@@ -509,7 +510,8 @@ db.restauracje.aggregate(
 **Najwyższa ocena restauracji** *ciekawe*
 ```js
 db.restauracje.aggregate(
- { $group: {_id: "name", maxRating: {$max: "$rating"}}}
+ { $group: 
+    {_id: "name", maxRating: {$max: "$rating"}}}
  )
  
 {
@@ -526,7 +528,8 @@ db.restauracje.aggregate(
 **Średnia ocena wszystkich restauracji**
 ```js
 db.restauracje.aggregate(
- { $group: {_id: "name", avgRating: {$avg: "$rating"}}}
+ { $group: 
+    {_id: "name", avgRating: {$avg: "$rating"}}}
  )
  
 {
@@ -538,6 +541,56 @@ db.restauracje.aggregate(
   ],
   "ok": 1
 }
+```
+**3 najpopuularnieszne nazwy restauracji: **
+```js
+db.restauracje.aggregate(
+[
+  {"$group" : 
+    {"_id" : "$name", "count" : {"$sum" : 1}}},
+    {"$sort" : {"count" : -1}},
+    {"$limit" : 3}
+    ])
+    
+   "result":[
+  {
+    "name": "Best Kebab",
+    "count": 30
+  },
+  {
+    "name": "Bengal Spice",
+    "count": 25
+  },
+  {
+    "name": "Bella Pizza",
+    "count": 23
+  }]
+    
+**3 najpopularniejsze typy serwowanego jedzenia: **
+```js
+db.restauracje.aggregate(
+[
+  {"$group" : 
+    {"_id" : "$type_of_food", "count" : {"$sum" : 1}}},
+    {"$sort" : {"count" : -1}},
+    {"$limit" : 3}
+    ])
+{
+  "result": [
+    {
+      "_id": "Curry",
+      "count": 902
+    },
+    {
+      "_id": "Pizza",
+      "count": 500
+    },
+    {
+      "_id": "Chinese",
+      "count": 174
+    }
+    ]
+    }
 ```
 
 ##Grupowania
@@ -636,14 +689,4 @@ rastauracje> food3
 ]
 ```
 
-```js
-var winner = db.restauracje.find({name: [ "Best Kebab" ]})
 
-db.winners.drop();
-winner.forEach(function(obj) { db.winners.insert(obj) });
-var winners = db.winners.group({
-  key: {name: true}
-  , initial: {count: 0}
-  , reduce: function(doc, out){ out.count++; }
-} );
-```
