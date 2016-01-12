@@ -492,6 +492,7 @@ db.restauracje.aggregate(
 ```
 
 **Najniższa ocena restauracji**
+
 ```js
 db.restauracje.aggregate(
  { $group: 
@@ -509,6 +510,7 @@ db.restauracje.aggregate(
 }
 ```
 **Najwyższa ocena restauracji** *ciekawe*
+
 ```js
 db.restauracje.aggregate(
  { $group: 
@@ -527,6 +529,7 @@ db.restauracje.aggregate(
 ```
 
 **Średnia ocena wszystkich restauracji**
+
 ```js
 db.restauracje.aggregate(
  { $group: 
@@ -568,7 +571,7 @@ db.restauracje.aggregate(
   }]
 ```
 
-**3 najpopularniejsze typy serwowanego jedzenia: **
+**3 najpopularniejsze typy serwowanego jedzenia**
 ```js
 db.restauracje.aggregate(
 [
@@ -608,7 +611,7 @@ res[0]
 #  "count": 1
 #}
 ```
-Top 10 najczęściej występujących nazw:
+**Top 10 najczęściej występujących nazw:**
 ```js
 var top10 = res.sort(function(a,b){ return b.count - a.count; }).slice(0, 10);
 
@@ -655,7 +658,7 @@ var top10 = res.sort(function(a,b){ return b.count - a.count; }).slice(0, 10);
   }
 ]
 ```
-To samo co wyżej, pogrupowane wg. typu serwowanego jedzenia.
+**To samo co wyżej, pogrupowane wg. typu serwowanego jedzenia.**
 ```js
 var food = db.restauracje.group({
   key: {type_of_food: true}
@@ -670,7 +673,7 @@ food[0]
 #}
 ```
 
-3 najpopularniejsze typy jedzenia
+**3 najpopularniejsze typy jedzenia**
 ```js
 var food3 = food.sort(function(a,b){ return b.count - a.count; }).slice(0, 3);
 
