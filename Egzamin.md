@@ -546,7 +546,8 @@ db.restauracje.aggregate(
   "ok": 1
 }
 ```
-***Średnia ocena restauracji python:**
+**Średnia ocena restauracji python**
+
 ```py
 import pymongo
 from pymongo import MongoClient
