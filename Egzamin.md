@@ -597,7 +597,26 @@ db.restauracje.aggregate(
     ]
     }
 ```
+**To co wyżej w Python**
+```py
+import pymongo
+from pymongo import MongoClient
+client = MongoClient()
 
+db = client['restaurants']
+collection = db['resturants']
+
+pipeline = [
+  {"$group" : {"_id" : "$type_of_food", "count" : {"$sum" : 1}}},
+  {"$sort" : {"count" : -1}},
+  {"$limit" : 3}
+]
+
+pytanie = db.restaurants.aggregate(pipeline)
+for doc in pytanie:
+   print(doc)
+   ```
+   
 ##Grupowania
 ```js
 var res = db.restauracje.group({
