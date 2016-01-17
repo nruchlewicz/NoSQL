@@ -1,4 +1,4 @@
-```js
+
 $(function () {
 
     // Radialize the colors
@@ -61,4 +61,3 @@ $(function () {
         }]
     });
 });
-```
