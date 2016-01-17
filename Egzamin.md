@@ -9,7 +9,7 @@
 
 
 ###Import
-Do eksperymentów użyłam niezbyt dużego pliku [restauracje.json](https://dl.dropboxusercontent.com/u/15056258/mongodb/restaurant.json). Obliczenia wykonywałam na tym samum sprzecie co zaliczenia. 
+Do eksperymentów użyłam niezbyt dużego pliku [restauracje.json](https://dl.dropboxusercontent.com/u/15056258/mongodb/restaurant.json). Obliczenia wykonywałam na tym samym sprzecie co zaliczenia. 
 
 Zaimportowanie do bazy MongoDB
 ```sh
@@ -124,6 +124,7 @@ db.restauracje.distinct("type_of_food").sort()
   "Vietnamese"
 ]
 ```
+Jak widać jest dosyć duży wybór jedzenia w różnych restauracjach. Każdy znajdzie jakąś restaurację dla Siebie. 
 ####Zapytania z rzutowaniem i sortowaniem
 **Posortowanie restauracji wg. nazwy i wywietlenie pierwszych 10**
 ```sh
@@ -160,6 +161,7 @@ restauracje> db.restauracje.find({}, {name: 1, _id: 0}).sort({name:1}).limit(10)
 }
 Fetched 10 record(s) in 333ms
 ```
+niektóre nazwy restauracji się powtarzają. 
 
 ```sh
 db.restauracje.find({}, {name: 1, _id: 0}).sort({name: -1}).skip(120).limit(10)
@@ -194,6 +196,7 @@ db.restauracje.find({}, {name: 1, _id: 0}).sort({name: -1}).skip(120).limit(10)
   "name": "A1 Rice 'N' Spice"
 }
 ```
+Nazwy posortowane alfabetyxcznie, i wyświetlne od końca dają dziwny rezultat.. Jest inne kodowanie i na końcu alfabetu nie jest "Z" tylko A1? oraz inne dziwne znaczki. 
 
 Restauracje zaczynające się na 3. Wyświetlnie pierwszych trzech.
 ```sh
@@ -256,6 +259,7 @@ restauracje> db.restauracje.find({type_of_food: "Polish"},{_id: 0})
 Fetched 2 record(s) in 2ms
 
 ```
+jak widać można zjeść też polskie jedzenie za granicą.. Niestety na 2584 restauracje tylko 2 serwują polskie jedzenie. 
 
 Wyświetlenie restauracji z rankingiem większym, równym 6.
 ```sh
@@ -292,6 +296,9 @@ db.restauracje.find({rating: {$gte: 1, $lte: 2}},{_id: 0, name: 1, rating:1 }).l
   "rating": 1.5
 }
 ```
+
+Jak widać restauracje maja ranking najwyższy 6, oraz najniższy 1. 
+Jest duża rozpiętość rankingu w tych restauracjach. 
 ###JavaScript
 
 Restauracje z nazwą dłuższą niż 1, krótszą, równą  3.
@@ -490,6 +497,8 @@ db.restauracje.aggregate(
   "ok": 1
 }
 ```
+Jak widać ranking wszystkich restauracji jest dosyć wysoki, biorąc pod uwagę, że mamy 2548 restauracji, a oceny wachają się od 1 do 6. Czyli w Angli restauracje są na dobrym poziomie, co pokazuje poniższa aggregacja, która wyświetla średnią.
+Najpier wyświetlam najniższy i najwyższy ranking.
 
 **Najniższa ocena restauracji**
 
@@ -509,7 +518,8 @@ db.restauracje.aggregate(
   "ok": 1
 }
 ```
-**Najwyższa ocena restauracji** *ciekawe*
+**Najwyższa ocena restauracji** *ciekawe* 
+okazuje się, że najwyższa ocena nie jest jeszcze zdefiniowana.. 
 
 ```js
 db.restauracje.aggregate(
@@ -546,6 +556,7 @@ db.restauracje.aggregate(
   "ok": 1
 }
 ```
+Biorąc pod uwage skalę od 1 do 6, średnia 4,9070422 jest wysoka. 
 
 **5 najpopuularnieszne nazwy restauracji:**
 ```js
@@ -618,7 +629,7 @@ db.restauracje.aggregate(
     }
 ```
 ![wykres](https://github.com/nruchlewicz/NoSQL/blob/master/img/wykres.png)
-Wykres przedstawia najpopularniejsze typy jedzenia. 100% to 2548 wszystkich restauracji. Jak widać dominuje serwowanie curry w Wielkiej Brytani. Na drugim miejscu jest pizza. Dużo restauracji serwuje "niepopularne" typy jedzenia, std tak duży udzia "inne" w wykresie.
+Wykres przedstawia najpopularniejsze typy jedzenia. 100% to 2548 wszystkich restauracji. Jak widać dominuje serwowanie curry w Wielkiej Brytani. Na drugim miejscu jest pizza. Dużo restauracji serwuje "niepopularne" typy jedzenia, std tak duży udział "inne" w wykresie.
    
 ##Grupowania
 ```js
