@@ -547,14 +547,14 @@ db.restauracje.aggregate(
 }
 ```
 
-**3 najpopuularnieszne nazwy restauracji:**
+**5 najpopuularnieszne nazwy restauracji:**
 ```js
 db.restauracje.aggregate(
 [
   {"$group" : 
     {"_id" : "$name", "count" : {"$sum" : 1}}},
     {"$sort" : {"count" : -1}},
-    {"$limit" : 3}
+    {"$limit" : 5}
     ])
     
    "result":[
@@ -569,7 +569,16 @@ db.restauracje.aggregate(
   {
     "name": "Bella Pizza",
     "count": 23
-  }]
+  },
+  {
+    "name": "Bellati  Hut",
+    "count": 18
+  },
+  {
+    "name": "BBQ Express ",
+    "count": 15
+  }
+  ]
 ```
 
 **3 najpopularniejsze typy serwowanego jedzenia**
@@ -579,7 +588,7 @@ db.restauracje.aggregate(
   {"$group" : 
     {"_id" : "$type_of_food", "count" : {"$sum" : 1}}},
     {"$sort" : {"count" : -1}},
-    {"$limit" : 3}
+    {"$limit" : 5}
     ])
 {
   "result": [
@@ -594,6 +603,14 @@ db.restauracje.aggregate(
     {
       "_id": "Chinese",
       "count": 174
+    },
+        {
+      "_id": "Kebab",
+      "count": 154
+    },
+        {
+      "_id": "Fish & chips",
+      "count": 116
     }
     ]
     }
