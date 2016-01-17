@@ -546,6 +546,24 @@ db.restauracje.aggregate(
   "ok": 1
 }
 ```
+***Średnia ocena restauracji python:**
+```py
+import pymongo
+from pymongo import MongoClient
+client = MongoClient()
+
+db = client['restaurants']
+collection = db['resturants']
+
+pipeline = [
+  { "$group": {"_id": "$name", "avgRating": {"$avg": "$rating"}} }
+]
+
+pytanie = db.restaurants.aggregate(pipeline)
+for doc in pytanie:
+   print(doc)
+```
+
 **3 najpopuularnieszne nazwy restauracji:**
 ```js
 db.restauracje.aggregate(
