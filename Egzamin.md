@@ -630,7 +630,7 @@ db.restauracje.aggregate(
     }
 ```
 ![wykres](https://github.com/nruchlewicz/NoSQL/blob/master/img/wykres.png)
-Wykres przedstawia najpopularniejsze typy jedzenia. 100% to 2548 wszystkich restauracji. Jak widać dominuje serwowanie curry w Wielkiej Brytani. Na drugim miejscu jest pizza. Dużo restauracji serwuje "niepopularne" typy jedzenia, std tak duży udział "inne" w wykresie.
+Wykres przedstawia najpopularniejsze typy jedzenia. 100% to 2548 wszystkich restauracji. Jak widać dominuje serwowanie curry w Wielkiej Brytani. Na drugim miejscu jest pizza. Dużo restauracji serwuje "niepopularne" typy jedzenia, stąd tak duży udział "inne" w wykresie.
    
 ##Grupowania
 ```js
