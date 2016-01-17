@@ -12,7 +12,7 @@
 Do eksperymentów użyłam niezbyt dużego pliku [restauracje.json](https://dl.dropboxusercontent.com/u/15056258/mongodb/restaurant.json). Obliczenia wykonywałam na tym samym sprzecie co zaliczenia. (z tym, że średną ocenę restauracji wykonałam na mongo 3.0.6)
 Do utworzenia wykresów użyłam narzędzia do tworzenia [wykresów](http://www.highcharts.com/)
 
-Zaimportowanie do bazy MongoDB
+**Zaimportowanie do bazy MongoDB**
 ```sh
 time mongoimport_ -d restauracje -c restauracje < restauracje.json
 
@@ -25,7 +25,7 @@ user    0m0.116s
 sys    0m0.024s
 ```
 
-Sprawdzenie, czy wszystkie jsony zainstalowały się poprawnie.
+**Sprawdzenie, czy wszystkie jsony zainstalowały się poprawnie.**
 ``` sh
 use restauracje
 
@@ -38,7 +38,7 @@ restauracje> db.restauracje.count()
 ####Proste zapytania
 Proste zapytania:
 
-Wyświetl pierwsze
+**Wyświetl pierwsze**
 ```sh
 db.restauracje.findOne()
 {
@@ -162,7 +162,7 @@ restauracje> db.restauracje.find({}, {name: 1, _id: 0}).sort({name:1}).limit(10)
 }
 Fetched 10 record(s) in 333ms
 ```
-niektóre nazwy restauracji się powtarzają. 
+niektóre nazwy restauracji się powtarzają. Wynika, to z tego, że jedna restauracja znajduje się na dwóch ulicach. 
 
 ```sh
 db.restauracje.find({}, {name: 1, _id: 0}).sort({name: -1}).skip(120).limit(10)
@@ -199,7 +199,7 @@ db.restauracje.find({}, {name: 1, _id: 0}).sort({name: -1}).skip(120).limit(10)
 ```
 Nazwy posortowane alfabetyxcznie, i wyświetlne od końca dają dziwny rezultat.. Jest inne kodowanie i na końcu alfabetu nie jest "Z" tylko A1? oraz inne dziwne znaczki. 
 
-Restauracje zaczynające się na 3. Wyświetlnie pierwszych trzech.
+**Restauracje zaczynające się na 3. Wyświetlnie pierwszych trzech.**
 ```sh
 db.restauracje.find({"name": /^3/}, {_id: 0}).sort({name: 1}).limit(3)
 {
@@ -233,7 +233,7 @@ db.restauracje.find({"name": /^3/}, {_id: 0}).sort({name: 1}).limit(3)
   "type_of_food": "Curry"
 }
 ```
-Restauracje serwujące polskie jedzenie:
+**Restauracje serwujące polskie jedzenie:**
 
 ```sh
 restauracje> db.restauracje.find({type_of_food: "Polish"},{_id: 0})
@@ -262,7 +262,7 @@ Fetched 2 record(s) in 2ms
 ```
 jak widać można zjeść też polskie jedzenie za granicą.. Niestety na 2584 restauracje tylko 2 serwują polskie jedzenie. 
 
-Wyświetlenie restauracji z rankingiem większym, równym 6.
+**Wyświetlenie restauracji z rankingiem większym, równym 6.**
 ```sh
 db.restauracje.find({rating: {$gte: 6}},{_id: 0, name: 1, rating:1 }).limit(3)
 {
@@ -281,7 +281,7 @@ db.restauracje.find({rating: {$gte: 6}},{_id: 0, name: 1, rating:1 }).limit(3)
 ```
 
 
-R-cje z rankingiem 1<= x <=2
+**Restauracje z rankingiem 1<= x <=2**
 ```sh
 db.restauracje.find({rating: {$gte: 1, $lte: 2}},{_id: 0, name: 1, rating:1 }).limit(3)
 {
@@ -302,7 +302,7 @@ Jak widać restauracje maja ranking najwyższy 6, oraz najniższy 1.
 Jest duża rozpiętość rankingu w tych restauracjach. 
 ###JavaScript
 
-Restauracje z nazwą dłuższą niż 1, krótszą, równą  3.
+**Restauracje z nazwą dłuższą niż 1, krótszą, równą  3.**
 ```js
 db.restauracje.find({$where: "(this.name.length >=1) && (this.name.length <= 3)" })
 {
@@ -353,7 +353,7 @@ db.restauracje.find({$where: "(this.name.length >=1) && (this.name.length <= 3)"
 #Fetched 4 record(s) in 25ms
 ```
 
-Restauracje z rankingiem większym, równym 1, mniejszym, równym 2.
+**Restauracje z rankingiem większym, równym 1, mniejszym, równym 2.**
 ```js
 db.restauracje.find({$where: "(this.rating >=1) && (this.rating <= 2)" })
 {
