@@ -592,7 +592,7 @@ db.restauracje.aggregate(
   }
   ]
 ```
-![wykres](https://github.com/nruchlewicz/NoSQL/blob/master/img/chart1.png)
+![wykres](https://github.com/nruchlewicz/NoSQL/blob/master/img/chart.png)
 Wykres przedstawia najczeciej wystpujce nazwy, w udziale procentowym w restauracjach. 100% to 2548 nazw restauracji. Jak widać nazwa *Best Kebab* występuje 30 razy co daje tylko 1,2% udziału we wszystkich nazwach. Brytyjczycy sa kreatywni w tworzeniu nazw dla swoich restauracji.  
 
 **3 najpopularniejsze typy serwowanego jedzenia**
