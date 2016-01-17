@@ -580,6 +580,8 @@ db.restauracje.aggregate(
   }
   ]
 ```
+Wykres przedstawia najczeciej wystpujce nazwy, w udziale procentowym w restauracjach. 100% to 2548 nazw restauracji.
+![wykres](https://github.com/nruchlewicz/NoSQL/blob/master/img/chart.png)
 
 **3 najpopularniejsze typy serwowanego jedzenia**
 ```js
@@ -615,7 +617,8 @@ db.restauracje.aggregate(
     ]
     }
 ```
-
+![wykres](https://github.com/nruchlewicz/NoSQL/blob/master/img/wykres.png)
+Wykres przedstawia najpopularniejsze typy jedzenia. 100% to 2548 wszystkich restauracji. Jak widać dominuje serwowanie curry w Wielkiej Brytani. Na drugim miejscu jest pizza. Dużo restauracji serwuje "niepopularne" typy jedzenia, std tak duży udzia "inne" w wykresie.
    
 ##Grupowania
 ```js
