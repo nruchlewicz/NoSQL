@@ -9,7 +9,8 @@
 
 
 ###Import
-Do eksperymentów użyłam niezbyt dużego pliku [restauracje.json](https://dl.dropboxusercontent.com/u/15056258/mongodb/restaurant.json). Obliczenia wykonywałam na tym samym sprzecie co zaliczenia. 
+Do eksperymentów użyłam niezbyt dużego pliku [restauracje.json](https://dl.dropboxusercontent.com/u/15056258/mongodb/restaurant.json). Obliczenia wykonywałam na tym samym sprzecie co zaliczenia. (z tym, że średną ocenę restauracji wykonałam na mongo 3.0.6)
+Do utworzenia wykresów użyłam narzędzia do tworzenia [wykresów](http://www.highcharts.com/)
 
 Zaimportowanie do bazy MongoDB
 ```sh
